@@ -7,7 +7,7 @@
 
     chordsGloria = \chordmode {
       % Compassos 1 a 4
-        g2 g | d:7 g | g2. g4 | d2:7 g2 |
+        g1 | d2:7 g | g1 | d2:7 g |
           % Compassos 5 a 8
             g2. g4 | d2:7 g2 | g2. g4 | d2:7 g2 |
               % Compassos 9 a 12
