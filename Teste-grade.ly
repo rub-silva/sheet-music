@@ -33,7 +33,7 @@ trompaMusica = \relative c' {
   instrumentName = "Flauta"
   shortInstrumentName = "Fl."
   midiInstrument = "flute" 
-} { \flautaMusica }
+} { \flautaMusica}
 
  \new Staff \with {
  instrumentName = "Clarinete em Sib"
