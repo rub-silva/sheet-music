@@ -16,7 +16,7 @@
                         \key g \major
                           \time 4/4
 
-                              b4 b b b8 d | d4. c8 b4 g | b4 b8 a b4 b8 d | d4. c8 b2 \bar ":|.:"
+                              b4 b b b8 d | d4. c8 b4 g | b4 b8 a b4 b8 d | d4. c8 b2 \bar ":|.:" \break
                                       
                                           d2 e8 d c b | c2 d8 c b a | b2 c8 b a g | a2 d,2 |
                                             
