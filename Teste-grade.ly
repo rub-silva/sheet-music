@@ -27,9 +27,29 @@ trompaMusica = \relative c' {
 }
 
 \score {
+<<
  \new StaffGroup = "Woodwinds" <<
   \new Staff \with {
   instrumentName = "Flauta"
   shortInstrumentName = "Fl."
   midiInstrument = "flute" 
 } { \flautaMusica }
+
+ \new Staff \with {
+ instrumentName = "Clarinete em Sib"
+ shortInstrumentName = "Cl."
+ midiInstrument = "clarinet"
+  } { 
+  \transpose bes c' \clarineteMusica 
+}
+ >>
+
+ \new StaffGroup = "Brass" <<
+       \new Staff \with {
+       instrumentName = "Trompa em Fá
+       shortInstrumentName = "Tr."
+       midiInstrument = "french horn"
+       } { 
+       \transpose f c' \trompaMusica 
+       }
+>>
