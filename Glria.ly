@@ -24,7 +24,7 @@
                                       
                                           d2 e8 d c b | c2 d8 c b a | b2 c8 b a g | a2 d,2 |
                                             
-                                                g4 a b c8 c | b2 a \bar ":|." g ||
+                                                g4 a b c8 c | b2 a \bar ":|." g1 \bar "|."
                                                }
 
                                                 \score {
