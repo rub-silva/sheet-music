@@ -8,7 +8,7 @@
     chordsGloria = \chordmode {
         g1 | d2:7 g | g1 | d2:7 g \bar ":|."
           % Compassos 5 a 8
-            g2. g4 ":|." d2:7 g2 | g2. g4 | d2:7 g2 |
+            g2. g4 | d2:7 g2 | g2. g4 | d2:7 g2 |
               % Compassos 9 a 12
                 g2. c4 | c2 g2 | d1 | g2 d2:7 |
                   % Compassos 13 a 16
@@ -20,16 +20,10 @@
                         \key g \major
                           \time 4/4
 
-                            % Frase 1 (Compassos 1-4)
-                              b4 b b b8 d | d4. c8 b4 g | b4 b8 a b4 b8 d | d4. c8 b2 |
-                                
-                                  % Frase 2 (Compassos 5-8)
-                                    b4 b b d | d4. c8 b2 | a4 b c b | a2 g2 |
+                              b4 b b b8 d | d4. c8 b4 g | b4 b8 a b4 b8 d | d4. c8 b2 \bar ":|."
                                       
-                                        % Melisma "Glória" (Compassos 9-12)
-                                          d'2( e8 d c b | c2 d8 c b a | b2 c8 b a g | a2) d,2 |
+                                          d2 e8 d c b | c2 d8 c b a | b2 c8 b a g | a2 d,2 |
                                             
-                                              % Melisma "Glória" final (Compassos 13-16)
                                                 d'2( e8 d c b | c2 d8 c b a | b2 c8 b a g | a2) g2 \bar "|."
                                                }
 
