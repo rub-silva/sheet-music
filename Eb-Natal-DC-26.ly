@@ -2,7 +2,7 @@
 
 \header {
 copyright = "Rubens Silva 2026"
-parte = "Instrumentos em Bb"
+parte = "Instrumentos em Eb"
 tagline = ##f
 }
 
@@ -44,7 +44,7 @@ g4 a b c8 c | b2 a \bar ":|." g1 \bar "|."
 \score {
 <<
 \new ChordNames { \chordsGloria }
-\new Staff { \transpose g a \melodyGloria }
+\new Staff { \transpose g e \melodyGloria }
 >>
 \layout { }
 \midi { }
@@ -84,7 +84,7 @@ f8 f f8. f16 f8 e e8. e16 | g8 g f d c4. g16 g \bar ":|."
 \score {
 <<
 \new ChordNames { \chordsJingle }
-\new Staff { \transpose c d \melodyJingle }
+\new Staff { \transpose c a, \melodyJingle }
 >>
 \layout { }
 \midi { }
@@ -125,7 +125,7 @@ c4. g8 e4 | g4. f8 d4 | c2. ~ | c \bar "|."
 \score {
 <<
 \new ChordNames { \chordsNoite }
-\new Staff { \transpose c d \melodyNoiteFeliz }
+\new Staff { \transpose c a \melodyNoiteFeliz }
 >>
 \layout { }
 \midi { }
