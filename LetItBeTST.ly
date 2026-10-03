@@ -27,7 +27,9 @@ f4 e8 d c4 b8 a | g4 b c2 |
 solTres = \relative c' {
 \global
 R1 | r2 r4. g'16 g |
-g8 g16 a~ a8 e
+g8 g16 a~ a8 e g g c8. d16 | e16 e8 e16~ e8 d d c c4 |
+e16 e8. f8 e16 e~ e8 d r8 e16 d | d8 c~ c2 r8. g16 |
+
 }
 
 % Clave de sol 4
