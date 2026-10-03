@@ -73,7 +73,7 @@ g4 a b c8 c | b2 a \bar ":|." g1 \bar "|."
 
 chordsJingle = \chordmode {
 \partial 8 s8 | c1 | s2 f2 | s2 g2 |
-s2 c2 | s1 | c2 f2 | s2 g2 |
+s2 c2 | s1 | s2 f2 | s2 g2 |
 s2 c2 | s1 | s1 | d2:m c2 |
 g1 | c1 | s1 | d2:m c2 |
 g2 c2 \bar ":|."
