@@ -105,7 +105,6 @@ f8 f f8. f16 f8 e e8. e16 | e8 d d e d4 g | e8 e e4 e8 e e4 | e8 g c,8. d16 e2 |
 f8 f f8. f16 f8 e e8. e16 | g8 g f d c4. g16 g \bar ":|."
 }
 \transpose c d \melodyJingle
-}
 
 \score {
 <<
@@ -122,6 +121,10 @@ f8 f f8. f16 f8 e e8. e16 | g8 g f d c4. g16 g \bar ":|."
 
 
 % MÚSICA 3: NOITE FELIZ
+
+\header {
+tagline = ##f
+}
 
 \markup {
 \vspace #2
@@ -186,10 +189,10 @@ g4. f8 d4 |
 c2. ~ |
 c \bar "|."
 }
-\transpose c d \melodyNoiteFeliz
 
 \score {
 <<
+\new Staff \transpose c d \melodyNoiteFeliz
 \new ChordNames {
 \chordsNoite
 }
