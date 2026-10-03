@@ -72,7 +72,7 @@ g4 a b c8 c | b2 a \bar ":|." g1 \bar "|."
 }
 
 chordsJingle = \chordmode {
-s1 | c1 | s2 f2 | s2 g2 |
+\partial 8 s8 | c1 | s2 f2 | s2 g2 |
 g2 c2 | c1 | c2 f2 | f2 g2 |
 g2 c2 | s1 | s1 | d2.:m c4 |
 g1 | c1 | s1 | d2.:m c4 |
@@ -84,7 +84,7 @@ melodyJingle = \relative c'' {
 \key c \major
 \time 4/4
 
-s2. s8 g16 g \bar ".|:" |
+\partial 8 g16 g \bar ".|:" |
 g8 e' d c g4. g16 g | g8 e' d c a4. a16 a | \break
 a8 f' e d b4. g'8 | a8 g f d e4. g,16 g | g8 e' d c g4. g16 g | g8 e' d c a4. a16 a | \break
 a8 f' e d g g g g | a8 g f d c4. g'8 | e8 e e4 e8 e e4 | e8 g c,8. d16 e2 | \break
