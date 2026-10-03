@@ -1,5 +1,9 @@
 \version "2.24.0"
 
+\header {
+copyright = "Rubens Silva 2026"
+}
+
 \markup {
 \column {
 \fill-line {
