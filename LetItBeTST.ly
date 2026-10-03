@@ -20,7 +20,7 @@ a'4 g8 f e4 d8 c | b4 d e2 |
 % Clave de sol 2
 solDois = \relative c'' {
 \global
-f'4 e8 d c4 b8 a | g4 b c2 |
+f4 e8 d c4 b8 a | g4 b c2 |
 }
 
 % Clave de sol 3
