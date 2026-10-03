@@ -65,7 +65,10 @@ g4 a b c8 c | b2 a \bar ":|." g1 \bar "|."
 }
 }
 
-chordsnoite = \chordsmod {
+chordsNoite = \chordmode {
+c2.|s|s|s|g|s|c|s|
+f|s|c|s|f|s|c|s|
+g|s|c|s|c|g|c
 }
 
 melodyNoiteFeliz = \relative c' {
@@ -109,9 +112,14 @@ c |
 }
 
 \score {
+<<
+\new ChordNames {
+\chordsNoite
+}
 \new Staff {
 \melodyNoiteFeliz
 }
+>>
 \layout { }
 \midi { }
 }
