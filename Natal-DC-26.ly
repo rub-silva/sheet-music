@@ -46,7 +46,7 @@ g4 a b c8 c | b2 a \bar ":|." g1 \bar "|."
 }
 >>
 \layout { }
-%midi { }
+\midi { }
 }
 
 
