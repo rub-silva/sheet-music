@@ -82,8 +82,8 @@ melodyJingle = \relative c'' {
 r2 r4 r8 g16 g \bar ".|:" |
 g8 e' d c g4. g16 g | g8 e' d c a4. a16 a | \break
 a8 f' e d b4. g'8 | a8 g f d e4. g,16 g | g8 e' d c g4. g16 g | g8 e' d c a4. a16 a | \break
-a8 f' e d g g g g | c'8 g f e d4. g8 | e8 e e4 e8 e e4 | e8 g c8. d16 e2 | \break
-f8 f f8. f16 f8 e e8. e16 | e8 d d e d4 g | e8 e e4 e8 e e4 | e8 g c8. d16 e2 | \break
+a8 f' e d g g g g | a8 g f d c4. g'8 | e8 e e4 e8 e e4 | e8 g c,8. d16 e2 | \break
+f8 f f8. f16 f8 e e8. e16 | e8 d d e d4 g | e8 e e4 e8 e e4 | e8 g c,8. d16 e2 | \break
 f8 f f8. f16 f8 e e8. e16 | g8 g f d c4. g16 g \bar ":|."
 }
 
