@@ -66,9 +66,12 @@ g4 a b c8 c | b2 a \bar ":|." g1 \bar "|."
 }
 
 chordsNoite = \chordmode {
-c2.|s|s|s|g|s|c|s|
-f|s|c|s|f|s|c|s|
-g|s|c|s|c|g|c|s \bar "|."
+c2. | s2. | s2. | s2. |
+g2. | s2. | c2. | s2. |
+f2. | s2. | c2. | s2. |
+f2. | s2. | c2. | s2. |
+g2. | s2. | c2. | s2. |
+c2. | g2. | c2. | s2. \bar "|."
 }
 
 melodyNoiteFeliz = \relative c' {
