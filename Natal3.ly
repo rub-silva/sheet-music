@@ -48,7 +48,7 @@ g4 a b c8 c | b2 a \bar ":|." g1 \bar "|."
 }
 >>
 \layout { }
-\midi { }
+%midi { }
 }
 
 
@@ -62,6 +62,11 @@ g4 a b c8 c | b2 a \bar ":|." g1 \bar "|."
 \fill-line {
 \fontsize #3
 \bold "Jingle Bells"
+}
+\fill-line {
+""
+""
+"J. Pierpont"
 }
 }
 }
