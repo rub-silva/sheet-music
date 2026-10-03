@@ -191,7 +191,8 @@ c \bar "|."
 
 \score {
 <<
-\new Staff \transpose c d \melodyNoiteFeliz
+\new Staff {\transpose c d \melodyNoiteFeliz
+}
 \new ChordNames {
 \chordsNoite
 }
