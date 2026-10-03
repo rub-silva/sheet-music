@@ -41,6 +41,12 @@ tagline = ##f
 
 \paper {
 indent = 0
+oddFooterMarkup = \markup {
+\fill-line { \small "Rubens Silva 2026" }
+}
+evenFooterMarkup = \markup {
+\fill-line { \small "Rubens Silva 2026" }
+}
 }
 
 % ================================================================
