@@ -2,6 +2,22 @@
 
 \header {
 copyright = "Rubens Silva 2026"
+parte = "Intrumentos em Bb"
+}
+
+\paper {
+oddHeaderMarkup = \markup {
+\fill-line {
+\fromproperty #'header:parte
+\null
+}
+}
+evenHeaderMarkup = \markup {
+\fill-line {
+\fromproperty #'header:instrument
+\null
+}
+}
 }
 
 % MÚSICA 1: GLÓRIA
