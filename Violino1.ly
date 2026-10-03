@@ -58,9 +58,8 @@ indent = 0
 \mark \markup \small "Pentacorde Maior"
 a4 b cis d | e d cis b |
 \bar "||"
-\mark \markup \small "Pentacorde menor"
-a4 b c d | e d c b |
-\bar "||" \break
+\once \override TextScript.self-alignment-X = #LEFT
+a4^\markup \small "Pentacorde menor" b c d | e d c b |\bar "||" \break
 
 \mark \markup \small "Maior"
 a4 b cis d | e fis gis a | gis fis e d | cis b a2 \bar "|." \break
@@ -273,13 +272,13 @@ g'4 g' a' a' | b'2 r2 |
 \layout { }
 }
 
-CIFRAS (acordes escritos sobre a pauta): troque \new Staff { ... }
-por um conjunto de duas vozes:
+%CIFRAS (acordes escritos sobre a pauta): troque \new Staff { ... }
+%por um conjunto de duas vozes:
 
-<<
+%<<
 \new ChordNames { \chordmode { g1 | c1 | d1 | g1 } }
-\new Staff { ... as notas aqui ... }
->>
-================================================================
+%\new Staff { ... as notas aqui ... }
+%>>
+%================================================================
 %}
 
