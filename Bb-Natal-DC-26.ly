@@ -149,7 +149,7 @@ g2. | s2. | c2. | s2. |
 c2. | g2. | c2. | s2. \bar "|."
 }
 
-melodyNoiteFeliz = \relative c' {
+melodyNoiteFeliz = \transpose c d \relative c' {
 \clef treble
 \key c \major
 \time 3/4
@@ -188,7 +188,6 @@ g4. f8 d4 |
 c2. ~ |
 c \bar "|."
 }
-\transpose d c \melodyNoiteFeliz
 
 \score {
 <<
