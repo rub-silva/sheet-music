@@ -67,9 +67,9 @@ melodyNoiteFeliz = \relative c' {
 \time 3/4
 
 g'4. a8 g4 |
-e2 e4 |
+e2. |
 g4. a8 g4 |
-e2 e4 |
+e2. |
 
 d'2 d4 |
 b2. |
@@ -79,45 +79,22 @@ g2. |
 a2 a4 |
 c4. b8 a4 |
 g4. a8 g4 |
-e2 e4 |
+e2. |
 
 a2 a4 |
 c4. b8 a4 |
 g4. a8 g4 |
-e2 e4 |
-
-d'2 d4 |
-f4. d8 b4 |
-c2. |
-e,2. |
-
-c'2 g4 |
-e2 c4 |
-g'2 f4 |
 e2. |
 
 d'2 d4 |
 f4. d8 b4 |
 c2. |
-e,2. |
-
-c'2 g4 |
-e2 c4 |
-g'2 f4 |
 e2. |
 
-d'2 d4 |
-f4. d8 b4 |
+c4. g8 e4 |
+g4. f8 d4 |
 c2. |
-e,2. |
-
-c'2 g4 |
-e2 c4 |
-g'2 f4 |
-e2. |
-
-c'2. |
-c2. |
+c |
 }
 
 \score {
