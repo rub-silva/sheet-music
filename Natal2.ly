@@ -61,6 +61,9 @@ g4 a b c8 c | b2 a \bar ":|." g1 \bar "|."
 }
 }
 
+chordsnoite = \chordsmod {
+}
+
 melodyNoiteFeliz = \relative c' {
 \clef treble
 \key c \major
@@ -76,6 +79,8 @@ b2. |
 c2 c4 |
 g2. |
 
+\break
+
 a2 a4 |
 c4. b8 a4 |
 g4. a8 g4 |
@@ -85,6 +90,8 @@ a2 a4 |
 c4. b8 a4 |
 g4. a8 g4 |
 e2. |
+
+\break
 
 d'2 d4 |
 f4. d8 b4 |
