@@ -6,7 +6,9 @@
 \fontsize #3
 \bold "Glória"
 }
-\right-align {
+\fill-line {
+""
+""
 "Melodia Francesa"
 }
 }
@@ -52,6 +54,8 @@ g4 a b c8 c | b2 a \bar ":|." g1 \bar "|."
 \bold "Noite Feliz"
 }
 \fill-line {
+""
+""
 "Franz Xaver Gruber"
 }
 }
