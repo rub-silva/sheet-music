@@ -15,7 +15,7 @@ copyright = "Rubens Silva 2026"
 \fill-line {
 ""
 ""
-"Melodia Francesa"
+\italic "Melodia Francesa"
 }
 }
 }
@@ -62,7 +62,7 @@ g4 a b c8 c | b2 a \bar ":|." g1 \bar "|."
 \fill-line {
 ""
 ""
-"J. Pierpont"
+\italic "J. Pierpont"
 }
 }
 }
@@ -114,7 +114,7 @@ f8 f f8. f16 f8 e e8. e16 | g8 g f d c4. g16 g \bar ":|."
 \fill-line {
 ""
 ""
-"Franz Xaver Gruber"
+\italic "Franz Xaver Gruber"
 }
 }
 }
