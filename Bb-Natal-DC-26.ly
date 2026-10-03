@@ -188,11 +188,10 @@ g4. f8 d4 |
 c2. ~ |
 c \bar "|."
 }
+\transpose d c \melodyNoiteFeliz
 
 \score {
 <<
-\new Staff {\transpose c d \melodyNoiteFeliz
-}
 \new ChordNames {
 \chordsNoite
 }
