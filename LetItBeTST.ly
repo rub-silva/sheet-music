@@ -20,13 +20,14 @@ a'4 g8 f e4 d8 c | b4 d e2 |
 % Clave de sol 2
 solDois = \relative c'' {
 \global
-a'4 g8 f e4 d8 c | b4 d e2 |
+f'4 e8 d c4 b8 a | g4 b c2 |
 }
 
 % Clave de sol 3
 solTres = \relative c' {
 \global
-R1*2
+R1 | r2 r4. g'16 g |
+g8 g16 a~ a8 e
 }
 
 % Clave de sol 4
