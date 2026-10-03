@@ -1,0 +1,285 @@
+\version "2.26.0"
+
+% ================================================================
+%  PROJETO: Material Servos Cardoso (manuscrito -> LilyPond)
+%
+%  COMO ESTE ARQUIVO FUNCIONA (guia rápido)
+%  ----------------------------------------------------------------
+%  - Tudo que começa com % é COMENTÁRIO: o LilyPond ignora a linha
+%    a partir do %. Serve só para anotações.
+%  - Blocos entre %{ e %} também são comentários (várias linhas).
+%  - Cada peça é um bloco \score { ... }. Para adicionar uma peça
+%    nova, copie o MODELO que está no fim do arquivo.
+%  - Marcas "% ?" = trecho que li com dúvida. Confira com o original.
+%
+%  NOTAS (nomes em inglês de nota do LilyPond)
+%    c d e f g a b   = dó ré mi fá sol lá si
+%    cis = dó#   ces = dób   (is = sustenido, es = bemol)
+%    Número depois da nota = duração: 1 inteira, 2 mínima,
+%    4 semínima, 8 colcheia, 16 semicolcheia, 4. = semínima pontuada
+%    r = pausa    |  = barra de compasso (opcional, só confere)
+%    ' sobe uma oitava, ,  desce uma oitava
+%    <g d' g'> = acorde (notas juntas)
+%
+%  DOIS MODOS DE ESCREVER OITAVAS
+%    \relative c'' { ... }  -> cada nota fica na oitava mais próxima
+%                              da anterior (bom para escalas).
+%    sem \relative         -> oitava absoluta: c' = dó central,
+%                              c'' = dó acima, c = dó abaixo.
+%
+%  PARA GERAR O PDF
+%    Compile este arquivo no LilyPond (Frescobaldi, LilyPond online,
+%    etc.). Se aparecer erro, ele indica "linha:coluna". Vá até a
+%    linha e procure chave } ou aspas " faltando.
+% ================================================================
+
+\header {
+title = "Material Servos Cardoso"
+subtitle = "Escalas, arpejos e peças"
+tagline = ##f
+}
+
+\paper {
+indent = 0
+}
+
+% ================================================================
+%  PÁGINA 1  ->  Escalas e Arpejos – Lá   (Servos Cardoso)
+%  Armadura: Lá maior (3 sustenidos). Como a armadura já tem
+%  dó#, fá# e sol#, uso "c", "f", "g" (sem is) quando o manuscrito
+%  pede dó, fá, sol NATURAIS. LilyPond coloca o bequadro sozinho.
+% ================================================================
+\score {
+\header { piece = "Escalas e Arpejos – Lá (Servos Cardoso)" }
+\new Staff \relative c'' {
+\key a \major
+\time 4/4
+
+\mark \markup \small "Pentacorde Maior"
+a4 b cis d | e d cis b |
+\bar "||"
+\mark \markup \small "Pentacorde menor"
+a4 b c d | e d c b |
+\bar "||" \break
+
+\mark \markup \small "Maior"
+a4 b cis d | e fis gis a | gis fis e d | cis b a2 \bar "|." \break
+
+\mark \markup \small "Menor Natural"
+a4 b c d | e f g a | g f e d | c b a2 \bar "|." \break
+
+\mark \markup \small "Menor Melódico"
+a4 b c d | e fis gis a | g f e d | c b a2 \bar "|." \break
+
+\mark \markup \small "Menor Harmônico"
+a4 b c d | e f gis a | g f e d | c b a2 \bar "|." \break
+
+\mark \markup \small "Arpejos – I"
+a4 cis e a | e cis a2 \bar "||"
+a4 cis e a | e cis a2 \bar "||" \break
+
+\mark \markup \small "vi"
+a4 cis fis a | fis cis a2 \bar "||" \break
+
+\mark \markup \small "IV"
+a4 d fis a | fis d a2 \bar "||"
+a4 d f a | f d a2 \bar "||" \break
+
+% ? as alterações da 7ª diminuta estavam pouco legíveis
+\mark \markup \small "7ª dim"
+a4 c es ges | a ges es c | a1 \bar "||"
+
+\mark \markup \small "7ª dom"
+a4 cis e g | a g e cis | d1 \bar "|."
+}
+\layout { }
+}
+
+\pageBreak
+
+% ================================================================
+%  PÁGINA 2  ->  Relojinho, Chineizinho, Perseguição (S. Cardoso)
+%  Aqui uso oitava ABSOLUTA (sem \relative), porque há saltos
+%  grandes entre o sol grave (g) e as notas agudas (e'', a').
+%  Pausa = r. Todos os "% ?" são pontos para conferir.
+% ================================================================
+
+% ---------- Relojinho ----------
+\score {
+\header { piece = "Relojinho (S. Cardoso)" }
+\new Staff {
+\time 2/4
+\clef treble
+
+\mark \markup \small "Pizz."
+\repeat volta 2 {
+g4 e'' | g4 e'' | g4 e'' | g4 e'' | % ? oitava da nota aguda
+}
+g2 \bar "||" \break % ? nota final
+
+\mark \markup \small "Arco"
+\repeat volta 2 {
+d''4. b'8 | g'4. b'8 | g'4 b' | a'2 | % ? compassos 1-4 muito incertos
+f'8 g' f' d' | g'2 |                   % ?
+f'8 g' f' d' | g'2 |                   % ?
+f'8 g' f' d' | g'2 |                   % ?
+}
+\break
+f'8 d' g' f' | g'4. r8 |                 % ? final do primeiro sistema
+\bar "||"
+d''4. b'8 | g'4. b'8 | g'4 b' | a'2 |    % ? repetição do início
+\bar "||"
+}
+\layout { }
+}
+
+% ---------- Chineizinho ----------
+\score {
+\header { piece = "Chineizinho (S. Cardoso)" }
+\new Staff {
+\time 3/4
+\clef treble
+
+\mark \markup \small "Pizz."
+g8 d' b'4 r | g8 d' b'4 r | g8 d' b'4 r | g8 d' b'4 r | % ? alturas aproximadas
+\bar "||"
+g2. \bar "||" \break % ? nota final
+
+\mark \markup \small "Arco"
+\repeat volta 2 {
+\tuplet 3/2 { g'8 a' g' } d''4 g' |
+\tuplet 3/2 { g'8 a' g' } d''4 g' |
+\tuplet 3/2 { g'8 a' g' } d''4 b'8 g' | % ?
+\tuplet 3/2 { g'8 a' g' } g'4 g' |      % ?
+}
+g'8 a' g'4 r | g'8 a' g'4 r | g'4 g' r\fermata \bar "|." % ? final
+}
+\layout { }
+}
+
+% ---------- Perseguição ----------
+\score {
+\header { piece = "Perseguição (S. Cardoso)" }
+\new Staff {
+\time 2/4
+\clef treble
+
+\mark \markup \small "Pizz."
+\repeat volta 2 {
+g4 a' | g4 a' | g4 a' | g4 a' | % ?
+}
+\repeat volta 2 {
+g4 a' | g4 a' | g4 a' | g4 a' | % ? "Arco" escrito acima deste trecho
+}
+<g d' g'>2 \bar "||" \break % ? acorde final
+
+\mark \markup \small "Arco"
+% TRECHO CROMÁTICO (colcheias com bemóis e bequadros): ilegível
+% na digitalização. R2*16 = 16 compassos de pausa (placeholder).
+% Quando tiver foto melhor, apague a linha abaixo e escreva as notas.
+R2*16
+\bar "|."
+}
+\layout { }
+}
+
+\pageBreak
+
+% ================================================================
+%  PÁGINA 3  ->  COLE AQUI  (Laranjinha Doce; Pentacordes)
+%  Títulos lidos do manuscrito; confira.
+% ================================================================
+
+
+% ================================================================
+%  PÁGINA 4  ->  COLE AQUI
+%  (Brilha Brilha Estrelinha; Canon – J. Pachelbel;
+%   Parabéns pra Você; Alecrim Dourado)
+% ================================================================
+
+
+% ================================================================
+%  PÁGINA 5  ->  COLE AQUI
+%  (Concerto de Beethoven; Oh! Suzana; Mazinha do Céu)
+% ================================================================
+
+
+% ================================================================
+%  PÁGINA 6  ->  COLE AQUI
+%  (Noite Feliz; Hallelujah; Glória de Natal)
+% ================================================================
+
+
+% ================================================================
+%  PÁGINA 7  ->  COLE AQUI
+%  (Povos Cantai; Sonda-me; Buscai Primeiro)
+% ================================================================
+
+
+% ================================================================
+%  PÁGINA 8  ->  COLE AQUI
+%  (A Thousand Years – Christina Perri; peça de Milton Nascimento
+%   – título ilegível; outra peça com cifras Em/D/G)
+% ================================================================
+
+
+% ================================================================
+%  PÁGINA 9  ->  COLE AQUI
+%  (Clocks – Coldplay; Além do Arco-Íris; Believer – Imagine Dragons)
+% ================================================================
+
+
+% ================================================================
+%  PÁGINA 10  ->  COLE AQUI
+%  (Ave Maria – C. Gounod; Viva la Vida – Coldplay)
+% ================================================================
+
+
+% ================================================================
+%  PÁGINA 11  ->  COLE AQUI
+%  (All of Me – John Legend; Photograph – Ed Sheeran)
+% ================================================================
+
+
+% ================================================================
+%  PÁGINA 12  ->  COLE AQUI
+%  (cantigas com cifras C, G7, F; ritmos escritos sem alturas)
+% ================================================================
+
+
+%{
+================================================================
+MODELO PARA UMA PEÇA NOVA  (copie, tire os %{ e %} e preencha)
+================================================================
+
+\pageBreak   % use só se quiser começar numa página nova
+
+\score {
+\header { piece = "Título da peça (Compositor)" }
+\new Staff {
+\key g \major        % armadura: g = Sol maior, d = Ré maior, etc.
+\time 4/4            % compasso
+\clef treble
+
+\mark \markup \small "Introdução"   % rótulo opcional acima da pauta
+g'4 a' b' c'' | d''2 d''2 |         % notas e ritmos
+\bar "||" \break                    % barra dupla e quebra de linha
+
+\repeat volta 2 {                   % ritornelo (|: ... :|)
+g'4 g' a' a' | b'2 r2 |
+}
+\bar "|."                           % barra final
+}
+\layout { }
+}
+
+CIFRAS (acordes escritos sobre a pauta): troque \new Staff { ... }
+por um conjunto de duas vozes:
+
+<<
+\new ChordNames { \chordmode { g1 | c1 | d1 | g1 } }
+\new Staff { ... as notas aqui ... }
+>>
+================================================================
+%}
+
