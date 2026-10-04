@@ -202,9 +202,9 @@ composer = "Servos Cardoso" }
 \new ChordNames {
 \chordmode {
 s1*4 | \partial 4 s4 |
-a1:m | a1:m | e1 | e1 |
+a1:m | a1:m | e1:7 | e1:7 |
 a1:m | a1:m | a1:m | c1:m | a1:m |
-f1:m | \partial 4 f1:maj9 \bar "|."
+f1:m | \partial 4 f4:maj9/g \bar "|."
 }
 }
 \new Staff \relative c' {
