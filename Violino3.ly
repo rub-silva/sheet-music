@@ -198,6 +198,12 @@ a8 b g4 | a8 b g4 | g4 g\fermata \bar "|."
 \header { 
 piece = "Perseguição" 
 composer = "Servos Cardoso" }
+<<
+\new ChordNames {
+\chordmode {
+g \bar "|."
+}
+}
 \new Staff \relative c' {
 \time 4/4
 \clef treble
@@ -227,6 +233,7 @@ f,4
 \partial 4 <g,,-> a' f'>4
 \bar "|."
 }
+>>
 \layout { }
 \midi { }
 }
