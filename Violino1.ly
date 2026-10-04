@@ -161,15 +161,15 @@ composer = "Servos Cardoso" }
 \time 2/4
 \clef treble
 
-\mark \markup \small "Pizz."
-g8 d' a' d, | g,8 d' a' d, | g,8 d' a' d, | g,8 d' a' d, \bar "||"
-g,2 \bar "|." \break % ? nota final
+g8^\markup \small "Pizz."
+ d' a' d, | g,8 d' a' d, | g,8 d' a' d, | g,8 d' a' d, \bar "||"
+g,2 \bar "|." \break
 
 \mark \markup \small "Arco"
 \bar ".|:" \tuplet 3/2 { a8 b a } d'4 |
 \tuplet 3/2 { a8 b a } g4 |
 \tuplet 3/2 { a8 b a} d8 b | a8 b g4 \bar ":|."
-g'8 a' g'4 r | g'8 a' g'4 r | g'4 g' r\fermata \bar "|." % ? final
+a8 b g4 | a8 b g4 | g4 g\fermata \bar "|."
 }
 \layout { }
 }
