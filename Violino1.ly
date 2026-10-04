@@ -138,12 +138,11 @@ composer = "Servos Cardoso" }
 \repeat volta 2 {
 g4^\markup \small "Pizz." e'' | g,,4 e'' | g,,4 e'' | g,,4 e'' | % ? oitava da nota aguda
 }
-g,,2 \bar "||" \break % ? nota final
+g,,2 \bar "||" \break
 
-\mark \markup \small "Arco"
 \repeat volta 2 {
-s4. b'8 | g4. b8 | g4. b8 | g2 | % ? compassos 1-4 muito incertos
-f'8 g' f' d' | g'2 |                   % ?
+s4. b''8^\markup \small "Arco" | g4. b8 | g4. b8 | g2 | % ? compassos 1-4 muito incertos
+a,8 b a f | g2 |                   % ?
 f'8 g' f' d' | g'2 |                   % ?
 f'8 g' f' d' | g'2 |                   % ?
 }
