@@ -51,7 +51,6 @@ scoreTitleMarkup = \markup {
 \fill-line {
 \null
 \italic \fromproperty #'header:composer
-\null
 }
 }
 }
