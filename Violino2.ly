@@ -136,7 +136,8 @@ composer = "Servos Cardoso" }
 <<
 \new ChordNames {
 \chordmode {
-s2*5 | s8 | g
+s2*5 | s8 | g2*3 | d2 | g2 | d2 | g2 |
+d2 | g2 | d2 | g2*5 \bar "|."
 }
 }
 \new Staff \relative c' {
