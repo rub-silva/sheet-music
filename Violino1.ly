@@ -167,8 +167,8 @@ g,2 \bar "|." \break % ? nota final
 
 \mark \markup \small "Arco"
 \bar ".|:" \tuplet 3/2 { a8 b a } d'4 |
-\tuplet 3/2 { a'8 b a } g4 |
-\tuplet 3/2 { a8 b a} d'8 b | a8 b g4 \bar ":|."
+\tuplet 3/2 { a8 b a } g4 |
+\tuplet 3/2 { a8 b a} d8 b | a8 b g4 \bar ":|."
 g'8 a' g'4 r | g'8 a' g'4 r | g'4 g' r\fermata \bar "|." % ? final
 }
 \layout { }
