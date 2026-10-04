@@ -37,7 +37,7 @@
 tagline = ##f
 }
 
-\paper {
+\defineBarLine "|.|:" #'("|.|:" ".|:" "|.")\paper {
 indent = 0
 short-indent = 0
 scoreTitleMarkup = \markup {
@@ -162,8 +162,8 @@ composer = "Servos Cardoso" }
 \clef treble
 
 \repeat volta 2 {g8^\markup \small "Pizz."
-d' a' d, | g,8 d' a' d, | g,8 d' a' d, | g,8 d' a' d, | } g,2 \bar "|." \break
-\bar ".|:" \tuplet 3/2 { a8^\markup \small "Arco"
+d' a' d, | g,8 d' a' d, | g,8 d' a' d, | g,8 d' a' d, | } g,2 \bar "|.|:" \break
+\tuplet 3/2 { a8^\markup \small "Arco"
  b a } d'4 |
 \tuplet 3/2 { a8 b a } g4 |
 \tuplet 3/2 { a8 b a} d8 b | a8 b g4 \bar ":|."
