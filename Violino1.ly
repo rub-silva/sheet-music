@@ -142,7 +142,7 @@ g,,2 \bar "||" \break % ? nota final
 
 \mark \markup \small "Arco"
 \repeat volta 2 {
-b'4. g''8 | b4. g8 | g'4 b' | a'2 | % ? compassos 1-4 muito incertos
+s4. b'8 | g4. b8 | g4. b8 | g2 | % ? compassos 1-4 muito incertos
 f'8 g' f' d' | g'2 |                   % ?
 f'8 g' f' d' | g'2 |                   % ?
 f'8 g' f' d' | g'2 |                   % ?
