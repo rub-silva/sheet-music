@@ -134,9 +134,8 @@ composer = "Servos Cardoso" }
 \time 2/4
 \clef treble
 
-\mark \markup \small "Pizz."
 \repeat volta 2 {
-g4 e'' | g4 e'' | g4 e'' | g4 e'' | % ? oitava da nota aguda
+g4^\markup \small "Pizz." e'' | g4 e'' | g4 e'' | g4 e'' | % ? oitava da nota aguda
 }
 g2 \bar "||" \break % ? nota final
 
