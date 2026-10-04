@@ -42,9 +42,17 @@ indent = 0
 short-indent = 0
 scoreTitleMarkup = \markup {
 \column {
+\vspace #-1.5
 \fill-line {
+\null
 \fontsize #4 \bold \fromproperty #'header:piece
+\null
+}
+\fill-line {
+\null
 \italic \fromproperty #'header:composer
+\null
+}
 }
 }
 }
@@ -53,7 +61,6 @@ oddFooterMarkup = \markup {
 }
 evenFooterMarkup = \markup {
 \fill-line { \small "Rubens Silva 2026" }
-}
 }
 
 % ================================================================
@@ -264,8 +271,8 @@ R2*16
 
 %{
 ================================================================
-MODELO PARA UMA PEÇA NOVA  (copie, tire os %{ e %} e preencha)
-================================================================
+MODELO PARA UMA PEÇA NOVA  (copie, tire os %{ e %} %e preencha)
+%===============================================================
 
 \pageBreak   % use só se quiser começar numa página nova
 
