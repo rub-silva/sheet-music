@@ -190,7 +190,7 @@ a8 b g4 | a8 b g4 | g4 g\fermata \bar "|."
 >>
 
 \layout { }
-\midi { }
+%\midi { }
 }
 
 % ---------- Perseguição ----------
@@ -228,6 +228,7 @@ f,4
 \bar "|."
 }
 \layout { }
+\midi { }
 }
 
 \pageBreak
