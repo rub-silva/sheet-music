@@ -157,14 +157,13 @@ g4. b8 | g4. b8 | g4 g | g2 \bar "|."
 \header { 
 piece = "Chineizinho"
 composer = "Servos Cardoso" }
-\new Staff {
-\time 3/4
+\new Staff \relative c' {
+\time 2/4
 \clef treble
 
 \mark \markup \small "Pizz."
-g8 d' b'4 r | g8 d' b'4 r | g8 d' b'4 r | g8 d' b'4 r | % ? alturas aproximadas
-\bar "||"
-g2. \bar "||" \break % ? nota final
+g8 d' a' d, | g,8 d' a' d, | g,8 d' a' d, | g,8 d' a' d, \bar "||"
+g,2 \bar "|." \break % ? nota final
 
 \mark \markup \small "Arco"
 \repeat volta 2 {
