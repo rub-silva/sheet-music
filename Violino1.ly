@@ -33,11 +33,12 @@
 %    linha e procure chave } ou aspas " faltando.
 % ================================================================
 
+\defineBarLine "|.|:" #'("|." ".|:" "|.|:")
+
 \header {
 tagline = ##f
 }
 
-\defineBarLine "|.|:" #'("|.|:" ".|:" "|.")\paper {
 indent = 0
 short-indent = 0
 scoreTitleMarkup = \markup {
