@@ -211,7 +211,7 @@ a,4^\markup \small "Arco" a' a, a' | a,4 a' a, a' |
 }
 \partial 4 <a,-> a' e'>4 \bar "|.|:" \break % ? acorde final
 
-\mark \markup \small "Arco"
+a8^\markup \small "Arco" bes a b c f e4 |
 % TRECHO CROMÁTICO (colcheias com bemóis e bequadros): ilegível
 % na digitalização. R2*16 = 16 compassos de pausa (placeholder).
 % Quando tiver foto melhor, apague a linha abaixo e escreva as notas.
