@@ -209,7 +209,7 @@ a4^\markup \small "Pizz."
 \repeat volta 2 {
 a,4^\markup \small "Arco" a' a, a' | a,4 a' a, a' |
 }
-<a, a' e'>4 s2. \bar "|.|:" \break % ? acorde final
+\partial 4 <a,-> a' e'>4 \bar "|.|:" \break % ? acorde final
 
 \mark \markup \small "Arco"
 % TRECHO CROMÁTICO (colcheias com bemóis e bequadros): ilegível
