@@ -34,13 +34,18 @@
 % ================================================================
 
 \header {
-title = "Material Servos Cardoso"
-subtitle = "Escalas, arpejos e peças"
 tagline = ##f
 }
 
 \paper {
 indent = 0
+short-indent = 0
+scoreTitleMarkup = \markup {
+\fill-line {
+\fontsize #2 \bold \fromproperty #'header:piece
+\italic \fromproperty #'header:composer
+}
+}
 oddFooterMarkup = \markup {
 \fill-line { \small "Rubens Silva 2026" }
 }
@@ -56,7 +61,9 @@ evenFooterMarkup = \markup {
 %  pede dó, fá, sol NATURAIS. LilyPond coloca o bequadro sozinho.
 % ================================================================
 \score {
-\header { piece = "Escalas e Arpejos – Lá (Servos Cardoso)" }
+\header {
+piece = "Escalas e Arpejos – Lá"
+composer = "Servos Cardoso" }
 \new Staff \relative c'' {
 \key a \major
 \time 4/4
@@ -82,8 +89,7 @@ a4 b c d | e f gis a | g f e d | c b a2 \bar "|." \break
 \mark \markup \small "Arpejos – i"
 a4 c e a | e c a2 \bar "||"
 
-\mark \markup \small "I"
-a4 cis e a | e cis a2 \bar "||" \break
+a4^\markup \small "I" cis e a | e cis a2 \bar "||" \break
 
 \mark \markup \small "vi"
 a4 cis fis a | fis cis a2 \bar "||" \break
