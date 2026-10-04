@@ -203,8 +203,8 @@ composer = "Servos Cardoso" }
 \chordmode {
 s1*4 | \partial 4 s4 |
 a1:m | a1:m | e1 | e1 |
-a1*2:m | a1:m | c1:m | a1*2:m |
-f1:m \partial 4 f1:maj9
+a1*2:m | a1:m | c1:m | a1:m |
+f1:m | \partial 4 f1:maj9 \bar "|."
 }
 }
 \new Staff \relative c' {
