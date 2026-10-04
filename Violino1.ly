@@ -141,10 +141,11 @@ g4^\markup \small "Pizz." e'' | g,,4 e'' | g,,4 e'' | g,,4 e'' | % ? oitava da n
 g,,2 \bar "||" \break
 
 \repeat volta 2 {
-s4. b''8^\markup \small "Arco" | g4. b8 | g4. b8 | g2 | % ? compassos 1-4 muito incertos
-a,8 b a f | g2 |                   % ?
-f'8 g' f' d' | g'2 |                   % ?
-f'8 g' f' d' | g'2 |                   % ?
+s4. b''8^\markup \small "Arco" \bar ".|:" g4. b8 | g4. b8 | g2 | % ? compassos 1-4 muito incertos
+a,8 b a fis | g2 |                   % ?
+a8 b a fis | g2 |                   % ?
+a8 b a fis | g8 d b' a |
+fis8 d b' a | g2 \bar ":|."
 }
 \break
 f'8 d' g' f' | g'4. r8 |                 % ? final do primeiro sistema
