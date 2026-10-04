@@ -127,7 +127,9 @@ a4^\markup \small "7ª dom" cis e g | a g e cis | d1 \bar "|."
 
 % ---------- Relojinho ----------
 \score {
-\header { piece = "Relojinho (S. Cardoso)" }
+\header { 
+piece = "Relojinho"
+composer = "Servos Cardoso" }
 \new Staff {
 \time 2/4
 \clef treble
