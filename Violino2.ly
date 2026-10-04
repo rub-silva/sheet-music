@@ -161,7 +161,7 @@ g4. b8 | g4. b8 | g4 g | g2 \bar "|."
 }
 >>
 \layout { }
-\midi { }
+%\midi { }
 }
 
 % ---------- Chineizinho ----------
@@ -169,6 +169,12 @@ g4. b8 | g4. b8 | g4 g | g2 \bar "|."
 \header { 
 piece = "Chineizinho"
 composer = "Servos Cardoso" }
+<<
+\new ChordNames {
+\chordmode {
+g
+}
+}
 \new Staff \relative c' {
 \time 2/4
 \clef treble
@@ -181,7 +187,10 @@ b a } d'4 |
 \tuplet 3/2 { a8 b a} d8 b | a8 b g4 \bar ":|."
 a8 b g4 | a8 b g4 | g4 g\fermata \bar "|."
 }
+>>
+
 \layout { }
+\midi { }
 }
 
 % ---------- Perseguição ----------
