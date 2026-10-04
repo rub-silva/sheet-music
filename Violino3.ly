@@ -201,7 +201,9 @@ composer = "Servos Cardoso" }
 <<
 \new ChordNames {
 \chordmode {
-a- 
+s1*4 | \partial 4 s4 |
+a1:m | a1:m | e1 | e1 |
+a1*3:m | c1:m | a1*2:m |
 }
 }
 \new Staff \relative c' {
