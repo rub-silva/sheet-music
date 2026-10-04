@@ -161,10 +161,8 @@ composer = "Servos Cardoso" }
 \time 2/4
 \clef treble
 
-\bar ".|:" g8^\markup \small "Pizz."
-d' a' d, | g,8 d' a' d, | g,8 d' a' d, | g,8 d' a' d, \bar ":|." g,2 \bar "|." 
-\break
-
+\repeat volta 2 {g8^\markup \small "Pizz."
+d' a' d, | g,8 d' a' d, | g,8 d' a' d, | g,8 d' a' d, | } g,2 \bar "|." \break
 \mark \markup \small "Arco"
 \bar ".|:" \tuplet 3/2 { a8 b a } d'4 |
 \tuplet 3/2 { a8 b a } g4 |
