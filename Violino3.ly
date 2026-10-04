@@ -201,7 +201,7 @@ composer = "Servos Cardoso" }
 <<
 \new ChordNames {
 \chordmode {
-g \bar "|."
+a- 
 }
 }
 \new Staff \relative c' {
