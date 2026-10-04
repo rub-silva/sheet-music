@@ -172,7 +172,7 @@ composer = "Servos Cardoso" }
 <<
 \new ChordNames {
 \chordmode {
-s2*5 | d2
+s2*5 | g2*7:sus2 \bar "|."
 }
 }
 \new Staff \relative c' {
