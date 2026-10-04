@@ -219,15 +219,12 @@ c,8 des c c c des c c | a4 a' a, a' \bar ":|."
 \override Glissando.style = #'zigzag
 f'4\glissando
 \hideNotes
-c'4\glissando
+c'2\glissando
 \unHideNotes
 f,4
 \revert Glissando.style
-
-% TRECHO CROMÁTICO (colcheias com bemóis e bequadros): ilegível
-% na digitalização. R2*16 = 16 compassos de pausa (placeholder).
-% Quando tiver foto melhor, apague a linha abaixo e escreva as notas.
-R2*16
+\bar ":|."
+\partial 4 <g,,-> a' f'>4
 \bar "|."
 }
 \layout { }
