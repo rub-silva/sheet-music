@@ -172,7 +172,7 @@ composer = "Servos Cardoso" }
 <<
 \new ChordNames {
 \chordmode {
-g
+s2*5 | d2
 }
 }
 \new Staff \relative c' {
@@ -181,8 +181,8 @@ g
 
 \repeat volta 2 {g8^\markup \small "Pizz."
 d' a' d, | g,8 d' a' d, | g,8 d' a' d, | g,8 d' a' d, | } g,2 \fermata \bar "|.|:" \break
-\tuplet 3/2 { a8^\markup \small "Arco"
-b a } d'4 |
+\tuplet 3/2 { a'8^\markup \small "Arco"
+b a } d4 |
 \tuplet 3/2 { a8 b a } g4 |
 \tuplet 3/2 { a8 b a} d8 b | a8 b g4 \bar ":|."
 a8 b g4 | a8 b g4 | g4 g\fermata \bar "|."
