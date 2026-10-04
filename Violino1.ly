@@ -76,40 +76,40 @@ composer = "Servos Cardoso" }
 \key a \major
 \time 4/4
 
-\mark \markup \small "Pentacorde Maior"
-a4 b cis d | e d cis b |
+a4^\markup \small "Pentacorde Maior"
+b cis d | e d cis b |
 \bar "||"
 \once \override TextScript.self-alignment-X = #LEFT
 a4^\markup \small "Pentacorde menor" b c d | e d c b |\bar "||" \break
 
-\mark \markup \small "Maior"
-a4 b cis d | e fis gis a | gis fis e d | cis b a2 \bar "|." \break
+a4^\markup \small "Maior"
+b cis d | e fis gis a | gis fis e d | cis b a2 \bar "|." \break
 
-\mark \markup \small "Menor Natural"
-a4 b c d | e f g a | g f e d | c b a2 \bar "|." \break
+a4^\markup \small "Menor Natural"
+b c d | e f g a | g f e d | c b a2 \bar "|." \break
 
-\mark \markup \small "Menor Melódico"
-a4 b c d | e fis gis a | g f e d | c b a2 \bar "|." \break
+a4^\markup \small "Menor Melódico"
+b c d | e fis gis a | g f e d | c b a2 \bar "|." \break
 
-\mark \markup \small "Menor Harmônico"
-a4 b c d | e f gis a | g f e d | c b a2 \bar "|." \break
+a4^\markup \small "Menor Harmônico"
+b c d | e f gis a | g f e d | c b a2 \bar "|." \break
 
-\mark \markup \small "Arpejos – i"
-a4 c e a | e c a2 \bar "||"
+a4^\markup \small "Arpejos – i"
+c e a | e c a2 \bar "||"
 
 a4^\markup \small "I" cis e a | e cis a2 \bar "||" \break
 
-\mark \markup \small "vi"
-a4 cis fis a | fis cis a2 \bar "||" \break
+a4^\markup \small "vi"
+cis fis a | fis cis a2 \bar "||" \break
 
-\mark \markup \small "IV"
-a4 d fis a | fis d a2 \bar "||"
+a4^\markup \small "IV"
+d fis a | fis d a2 \bar "||"
 
 a4^\markup \small "iv" d f a | f d a2 \bar "||" \break
 
 % ? as alterações da 7ª diminuta estavam pouco legíveis
-\mark \markup \small "7ª dim"
-a4 c es ges | a ges es c | a1 \bar "||"
+a4^\markup \small "7ª dim"
+c es ges | a ges es c | a1 \bar "||"
 
 a4^\markup \small "7ª dom" cis e g | a g e cis | d1 \bar "|."
 }
