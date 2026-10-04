@@ -125,10 +125,10 @@ a4^\markup \small "7ª dom" cis e g | a g e cis | d1 \bar "|."
 %  Pausa = r. Todos os "% ?" são pontos para conferir.
 % ================================================================
 
-% ---------- Relojinho ----------
+% ---------- Reloginho ----------
 \score {
 \header { 
-piece = "Relojinho"
+piece = "Reloginho"
 composer = "Servos Cardoso" }
 \new Staff \relative c' {
 \time 2/4
@@ -154,7 +154,9 @@ g4. b8 | g4. b8 | g4 g | g2 \bar "|."
 
 % ---------- Chineizinho ----------
 \score {
-\header { piece = "Chineizinho (S. Cardoso)" }
+\header { 
+piece = "Chineizinho"
+composer = "Servos Cardoso" }
 \new Staff {
 \time 3/4
 \clef treble
