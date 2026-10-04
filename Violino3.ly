@@ -195,19 +195,21 @@ a8 b g4 | a8 b g4 | g4 g\fermata \bar "|."
 
 % ---------- Perseguição ----------
 \score {
-\header { piece = "Perseguição (S. Cardoso)" }
-\new Staff {
-\time 2/4
+\header { 
+piece = "Perseguição" 
+composer = "Servos Cardoso" }
+\new Staff \relative c' {
+\time 4/4
 \clef treble
 
-\mark \markup \small "Pizz."
 \repeat volta 2 {
-g4 a' | g4 a' | g4 a' | g4 a' | % ?
+a4^\markup \small "Pizz."
+ a' a,4 a' | a,4 a' a, a' \bar ":|."
 }
 \repeat volta 2 {
-g4 a' | g4 a' | g4 a' | g4 a' | % ? "Arco" escrito acima deste trecho
+a,4^\markup \small "Arco" a' a, a' | a,4 a' a, a' |
 }
-<g d' g'>2 \bar "||" \break % ? acorde final
+<a, a' e'>4 \bar "|. .|:" \break % ? acorde final
 
 \mark \markup \small "Arco"
 % TRECHO CROMÁTICO (colcheias com bemóis e bequadros): ilegível
