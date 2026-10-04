@@ -133,6 +133,7 @@ composer = "Servos Cardoso" }
 \new Staff {
 \time 2/4
 \clef treble
+\key g \major
 
 \repeat volta 2 {
 g4^\markup \small "Pizz." e'' | g4 e'' | g4 e'' | g4 e'' | % ? oitava da nota aguda
@@ -141,7 +142,7 @@ g2 \bar "||" \break % ? nota final
 
 \mark \markup \small "Arco"
 \repeat volta 2 {
-d''4. b'8 | g'4. b'8 | g'4 b' | a'2 | % ? compassos 1-4 muito incertos
+b''4. g''8 | b4. g8 | g'4 b' | a'2 | % ? compassos 1-4 muito incertos
 f'8 g' f' d' | g'2 |                   % ?
 f'8 g' f' d' | g'2 |                   % ?
 f'8 g' f' d' | g'2 |                   % ?
