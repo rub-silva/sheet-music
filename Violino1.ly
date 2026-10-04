@@ -41,9 +41,11 @@ tagline = ##f
 indent = 0
 short-indent = 0
 scoreTitleMarkup = \markup {
+\column {
 \fill-line {
-\fontsize #2 \bold \fromproperty #'header:piece
+\fontsize #4 \bold \fromproperty #'header:piece
 \italic \fromproperty #'header:composer
+}
 }
 }
 oddFooterMarkup = \markup {
