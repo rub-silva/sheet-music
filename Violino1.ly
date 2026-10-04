@@ -90,14 +90,14 @@ a4 cis fis a | fis cis a2 \bar "||" \break
 
 \mark \markup \small "IV"
 a4 d fis a | fis d a2 \bar "||"
-a4 d f a | f d a2 \bar "||" \break
+
+a4^\markup \small "iv" d f a | f d a2 \bar "||" \break
 
 % ? as alterações da 7ª diminuta estavam pouco legíveis
 \mark \markup \small "7ª dim"
 a4 c es ges | a ges es c | a1 \bar "||"
 
-\mark \markup \small "7ª dom"
-a4 cis e g | a g e cis | d1 \bar "|."
+a4^\markup \small "7ª dom" cis e g | a g e cis | d1 \bar "|."
 }
 \layout { }
 }
