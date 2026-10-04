@@ -133,6 +133,12 @@ a4^\markup \small "7ª dom" cis e g | a g e cis | d1 \bar "|."
 \header { 
 piece = "Reloginho"
 composer = "Servos Cardoso" }
+<<
+\new ChordNames {
+\chordmode {
+s2*5 | s8 | g
+}
+}
 \new Staff \relative c' {
 \time 2/4
 \clef treble
@@ -152,6 +158,7 @@ fis8 d b' a | g4. b'8 \bar ":|."
 }
 g4. b8 | g4. b8 | g4 g | g2 \bar "|."
 }
+>>
 \layout { }
 %\midi { }
 }
