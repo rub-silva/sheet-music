@@ -213,7 +213,7 @@ a,4^\markup \small "Arco" a' a, a' | a,4 a' a, a' |
 
 a8^\markup \small "Arco" bes a b c f e4 |
 a,8 bes a b c f e4| e8 f e f e f e f | e8 f e f c d c b? |
-a4 a' a, a' \bar ":|:" \break
+a4 a' a, a' \bar ":|.|:" \break
 a,8 bes a a a8 bes a a |
 
 % TRECHO CROMÁTICO (colcheias com bemóis e bequadros): ilegível
