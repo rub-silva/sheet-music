@@ -82,7 +82,7 @@ a4 b c d | e f gis a | g f e d | c b a2 \bar "|." \break
 \mark \markup \small "Arpejos – i"
 a4 c e a | e c a2 \bar "||"
 
-\mark \markup \small "Arpejos – I"
+\mark \markup \small "I"
 a4 cis e a | e cis a2 \bar "||" \break
 
 \mark \markup \small "vi"
