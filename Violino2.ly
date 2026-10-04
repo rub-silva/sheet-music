@@ -116,6 +116,7 @@ c es ges | a ges es c | a1 \bar "||"
 a4^\markup \small "7ª dom" cis e g | a g e cis | d1 \bar "|."
 }
 \layout { }
+%\midi { }
 }
 
 \pageBreak
@@ -152,6 +153,7 @@ fis8 d b' a | g4. b'8 \bar ":|."
 g4. b8 | g4. b8 | g4 g | g2 \bar "|."
 }
 \layout { }
+%\midi { }
 }
 
 % ---------- Chineizinho ----------
