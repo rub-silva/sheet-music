@@ -511,6 +511,68 @@ composer = "" }
     %  \midi {\tempo 4 = 100 }
     }
 
+% CANON
+
+PartPOneVoiceOne =  \relative fis'' {
+    \repeat volta 2 {
+        \clef "treble" \numericTimeSignature\time 4/4 \key d \major
+        \pageBreak | % 1
+        \stemDown fis2 \downbow -\markup{ \bold\teeny {1} } \stemDown e2
+        \upbow -\markup{ \bold\teeny {0} } | % 2
+        \stemDown d2 -\markup{ \bold\teeny {3} } \stemDown cis2 | % 3
+        \stemDown b2 \stemUp a2 -\markup{ \bold\teeny {0} } | % 4
+        \stemDown b2 -\markup{ \bold\teeny {1} } \stemDown cis2 \breathe
+        -\markup{ \bold\teeny {2} } | % 5
+        \stemDown d2 -\markup{ \bold\teeny {3} } \stemDown cis2 \break | % 6
+        \stemDown b2 \stemUp a2 | % 7
+        \stemUp g2 -\markup{ \bold\teeny {3} } \stemUp fis2 -\markup{
+            \bold\teeny {2} } | % 8
+        \stemUp g2 -\markup{ \bold\teeny {3} } \stemUp e2 -\markup{
+            \bold\teeny {1} } }
+    | % 9
+    d1 -\markup{ \bold\teeny {0} } \bar "|."
+    }
+
+PartPOneVoiceOneChords =  \chordmode {
+    \repeat volta 2 {
+        | % 1
+        d2:5 a2:5 | % 2
+        b2:m5 fis2:m5 | % 3
+        g2:5 d2:5 | % 4
+        g2:5 a2:5 | % 5
+        s2 s2 | % 6
+        s2 s2 | % 7
+        s2 s2 | % 8
+        s2 s2 }
+    | % 9
+    s1 \bar "|."
+    }
+
+
+% The score definition
+\score {
+
+\header {
+piece = "Canon in D"
+composer = "Johann Pachelbel" }
+
+    <<
+        
+        \context ChordNames = "PartPOneVoiceOneChords" { \PartPOneVoiceOneChords}
+        \new Staff
+    
+            \context Staff << 
+                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+                \context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
+      >>
+        
+        >>
+    \layout {}
+    % To create MIDI output, uncomment the following line:
+    %  \midi {\tempo 4 = 100 }
+    }
+
+
 % ================================================================
 %  PÁGINA 5  ->  COLE AQUI
 %  (Concerto de Beethoven; Oh! Suzana; Mazinha do Céu)
