@@ -119,7 +119,7 @@ c es ges | a ges es c | a1 \bar "||"
 a4^\markup \small "7ª dom" cis e g | a g e cis | d1 \bar "|."
 }
 \layout { }
-\midi { }
+%\midi { }
 }
 
 \pageBreak
@@ -164,7 +164,7 @@ g4. b8 | g4. b8 | g4 g | g2 \bar "|."
 }
 >>
 \layout { }
-\midi { }
+%\midi { }
 }
 
 % ---------- Chineizinho ----------
@@ -193,7 +193,7 @@ a8 b g4 | a8 b g4 | g4 g\fermata \bar "|."
 >>
 
 \layout { }
-\midi { }
+%\midi { }
 }
 
 % ---------- Perseguição ----------
