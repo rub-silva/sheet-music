@@ -795,7 +795,6 @@ composer = ""
 
 
 % Oh! Suzana
-\pageBreak
 
 PartPOneVoiceOne =  \relative a' {
 \clef "treble" \time 2/2 \key a \major \pageBreak | % 1
@@ -985,30 +984,30 @@ MODELO PARA UMA PEÇA NOVA  (copie, tire os %{ e %} %e preencha)
 
 \pageBreak   % use só se quiser começar numa página nova
 
-\score {
-\header { piece = "Título da peça (Compositor)" }
-\new Staff {
-\key g \major        % armadura: g = Sol maior, d = Ré maior, etc.
-\time 4/4            % compasso
-\clef treble
+%\score {
+%\header { piece = "Título da peça (Compositor)" }
+%\new Staff {
+%\key g \major        % armadura: g = Sol maior, d = Ré maior, etc.
+%\time 4/4            % compasso
+%\clef treble
 
-\mark \markup \small "Introdução"   % rótulo opcional acima da pauta
-g'4 a' b' c'' | d''2 d''2 |         % notas e ritmos
-\bar "||" \break                    % barra dupla e quebra de linha
+%\mark \markup \small "Introdução"   % rótulo opcional acima da pauta
+%g'4 a' b' c'' | d''2 d''2 |         % notas e ritmos
+%\bar "||" \break                    % barra dupla e quebra de linha
 
-\repeat volta 2 {                   % ritornelo (|: ... :|)
-g'4 g' a' a' | b'2 r2 |
-}
-\bar "|."                           % barra final
-}
-\layout { }
-}
+%\repeat volta 2 {                   % ritornelo (|: ... :|)
+%g'4 g' a' a' | b'2 r2 |
+%}
+%\bar "|."                           % barra final
+%}
+%\layout { }
+%}
 
 %CIFRAS (acordes escritos sobre a pauta): troque \new Staff { ... }
 %por um conjunto de duas vozes:
 
 %<<
-\new ChordNames { \chordmode { g1 | c1 | d1 | g1 } }
+%\new ChordNames { \chordmode { g1 | c1 | d1 | g1 } }
 %\new Staff { ... as notas aqui ... }
 %>>
 %================================================================
