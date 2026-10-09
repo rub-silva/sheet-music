@@ -426,10 +426,6 @@ PartPOneVoiceOne =  \relative a' {
 \score {
 
 \header {
-piece = "Brilha Brilha Estrelinha"
-composer = "" }
-
-\header {
 piece = "Spicato"
 composer = "" }
 
@@ -482,19 +478,25 @@ PartPOneVoiceOne =  \relative a' {
 
 PartPOneVoiceOneChords =  \chordmode {
     | % 1
-    a4:5 s4 e4:5 s4 | % 2
-    d4:5 s4 a2:5 | % 3
-    d4:5 s4 a4:5 s4 | % 4
-    e4:5 s4 a2:5 \bar "||"
-    a4:5 s4 d4:5 s4 | % 6
-    a4:5 s4 e2:5 | % 7
-    a4:5 s4 d4:5 s4 | % 8
-    a4:5 s4 e2:5 \bar "||"
+    a4 s4 e4 s4 | % 2
+    d4 s4 a2 | % 3
+    d4 s4 a4 s4 | % 4
+    e4 s4 a2 \bar "||"
+    a4 s4 d4 s4 | % 6
+    a4 s4 e2 | % 7
+    a4 s4 d4 s4 | % 8
+    a4 s4 e2 \bar "||"
     }
 
 
 % The score definition
 \score {
+
+
+\header {
+piece = "Brilha Brilha Estrelinha"
+composer = "" }
+
     <<
         
         \context ChordNames = "PartPOneVoiceOneChords" { \PartPOneVoiceOneChords}
