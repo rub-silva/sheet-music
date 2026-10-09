@@ -241,7 +241,7 @@ f,4
 }
 >>
 \layout { }
-\midi { }
+%\midi { }
 }
 
 \pageBreak
