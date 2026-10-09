@@ -250,56 +250,159 @@ f,4
 
 % ---------- Laranjada Doce ----------
 
-escala = { a b cis' d' e' fis' gis' }
+#(define* (quebra-a-cada n #:optional (deslocamento 0))
+   (lambda (context)
+     (let ((ultimo -1))
+       (make-engraver
+        ((stop-translation-timestep engraver)
+         (let ((pos (ly:context-property context 'measurePosition))
+               (num (ly:context-property context 'currentBarNumber))
+               (col (ly:context-property context 'currentCommandColumn)))
+           (if (and (ly:moment? pos)
+                    (integer? num)
+                    (ly:grob? col)
+                    (zero? (ly:moment-main-numerator pos))
+                    (> num 1)
+                    (not (= num ultimo))
+                    (zero? (modulo (- num 1 deslocamento) n)))
+               (begin
+                 (set! ultimo num)
+                 (ly:grob-set-property! col 'line-break-permission 'force)))))))))
 
-frase = \relative e' {
-  e'16 e e e e8 e cis4 a |
-  e'16 e e e e8 e d4 b |
-  e16 e e e e8 e d8 cis b4 |
-  e16 e e e e8 e cis8 b a4\fermata \bar "||" \break
+musica =  \relative e'' {
+\clef "treble" \numericTimeSignature\time 4/4 \key a \major
+\pageBreak | % 1
+\stemDown e16 [ \stemDown e16 \stemDown e16 \stemDown e16 ]
+\stemDown e8 [ \stemDown e8 ] \stemDown cis4 \stemUp a4 | % 2
+\stemDown e'16 [ \stemDown e16 \stemDown e16 \stemDown e16 ]
+\stemDown e8 [ \stemDown e8 ] \stemDown d4 \stemDown b4 | % 3
+\stemDown e16 [ \stemDown e16 \stemDown e16 \stemDown e16 ]
+\stemDown e8 [ \stemDown e8 ] \stemDown d8 [ \stemDown cis8 ]
+\stemDown b4
+\stemDown e16 [ \stemDown e16 \stemDown e16 \stemDown e16 ]
+\stemDown e8 [ \stemDown e8 ] \stemDown cis8 [ \stemDown b8 ]
+\stemUp a4 \fermata \bar "||"
+\key d \major \stemUp a16 [ \stemUp a16 \stemUp a16 \stemUp a16 ]
+\stemUp a8 [ \stemUp a8 ] \stemUp fis4 \stemUp d4 | % 6
+\stemUp a'16 [ \stemUp a16 \stemUp a16 \stemUp a16 ] \stemUp a8 [
+\stemUp a8 ] \stemUp g4 \stemUp e4 | % 7
+\stemUp a16 [ \stemUp a16 \stemUp a16 \stemUp a16 ] \stemUp a8 [
+\stemUp a8 ] \stemUp g8 [ \stemUp fis8 ] \stemUp e4
+\stemUp a16 [ \stemUp a16 \stemUp a16 \stemUp a16 ] \stemUp a8 [
+\stemUp a8 ] \stemUp fis8 [ \stemUp e8 ] \stemUp d4 \fermata \bar
+"||"
+\key g \major \stemUp d16 [ \stemUp d16 \stemUp d16 \stemUp d16 ]
+\stemUp d8 [ \stemUp d8 ] \stemUp b4 \stemUp g4 | \barNumberCheck
+#10
+\stemUp d'16 [ \stemUp d16 \stemUp d16 \stemUp d16 ] \stemUp d8 [
+\stemUp d8 ] \stemUp c4 \stemUp a4 | % 11
+\stemUp d16 [ \stemUp d16 \stemUp d16 \stemUp d16 ] \stemUp d8 [
+\stemUp d8 ] \stemUp c8 [ \stemUp b8 ] \stemUp a4
+\stemUp d16 [ \stemUp d16 \stemUp d16 \stemUp d16 ] \stemUp d8 [
+\stemUp d8 ] \stemUp b8 [ \stemUp a8 ] \stemUp g4 \fermata \bar "||"
+\key c \major \stemUp g16 [ \stemUp g16 \stemUp g16 \stemUp g16 ]
+\stemUp g8 [ \stemUp g8 ] \stemUp b4 \stemUp g4 | % 14
+\stemUp g16 [ \stemUp g16 \stemUp g16 \stemUp g16 ] \stemUp g8 [
+\stemUp g8 ] \stemUp c4 \stemUp a4
+\stemUp g16 [ \stemUp g16 \stemUp g16 \stemUp g16 ] \stemUp g8 [
+\stemUp g8 ] \stemUp c8 [ \stemUp b8 ] \stemUp a4 | % 16
+\stemUp g16 [ \stemUp g16 \stemUp g16 \stemUp g16 ] \stemUp g8 [
+\stemUp g8 ] \stemUp b8 [ \stemUp a8 ] \stemUp g4 \fermata \bar "|."
 }
 
 \score {
 \header {
 piece = "Laranjada Doce"
 composer = "" }
-<<
-\new ChordNames {
-\chordmode {
-s2*5 | g2*7:sus2 |
+
+ \new Staff \musica
+  \layout {
+    \context {
+      \Score
+      \consists #(quebra-a-cada 4)
+      \override NonMusicalPaperColumn.line-break-permission = ##f
 }
 }
-\new Staff \relative c' {
-\autoBreaksOff
-\key a \major
-\time 4/4
-\clef treble
-
-\frase
-
-a'16 a a a a8 a fis4 d |
-  a'16 a a a a8 a g4 e |
-  a16 a a a a8 a g8 fis e4 |
-  a16 a a a a8 a fis8 e a4
-\fermata "||" \break
-
-d,16 d d d d8 d b4 gis |
-  d'16 d d d d8 d cis4 a |
-  d16 d d d d8 d cis8 b a4 |
-  d16 d d d d8 d b8 a a4
-\fermata "||" \break
-
-g16 g g g g8 g b4 g |
-g16 g g g g8 g c4 a |
-g16 g g g g8 g c8 b a4 |
-g16 g g g g8 g b8 a g4\fermata \bar "|."
 }
 
->>
+\layout {}
+% To create MIDI output, uncomment the following line:
+%  \midi {\tempo 4 = 100 }
 
-\layout { }
-\midi { }
+
+% PENTACORDES
+
+#(define* (quebra-a-cada n #:optional (deslocamento 0))
+   (lambda (context)
+     (let ((ultimo -1))
+       (make-engraver
+        ((stop-translation-timestep engraver)
+         (let ((pos (ly:context-property context 'measurePosition))
+               (num (ly:context-property context 'currentBarNumber))
+               (col (ly:context-property context 'currentCommandColumn)))
+           (if (and (ly:moment? pos)
+                    (integer? num)
+                    (ly:grob? col)
+                    (zero? (ly:moment-main-numerator pos))
+                    (> num 1)
+                    (not (= num ultimo))
+                    (zero? (modulo (- num 1 deslocamento) n)))
+               (begin
+                 (set! ultimo num)
+                 (ly:grob-set-property! col 'line-break-permission 'force)))))))))
+
+
+PartPOneVoiceOne =  \relative e'' {
+    \repeat volta 2 {
+        \clef "treble" \numericTimeSignature\time 4/4 \key c \major
+        \pageBreak | % 1
+        \stemDown e2 \stemDown f2 | % 2
+        \stemDown g2 \stemDown a2 | % 3
+        \stemDown b2 \stemDown a2 | % 4
+        \stemDown g2 \stemDown f2 }
+    \repeat volta 2 {
+        | % 5
+        \stemUp a,2 \stemDown b2 | % 6
+        \stemDown c2 \stemDown d2 \break | % 7
+        \stemDown e2 \stemDown d2 | % 8
+        \stemDown c2 \stemDown b2 }
+    \repeat volta 2 {
+        | % 9
+        \stemUp d,2 \stemUp e2 | \barNumberCheck #10
+        \stemUp f2 \stemUp g2 | % 11
+        \stemUp a2 \stemUp g2 \break | % 12
+        \stemUp f2 \stemUp e2 }
+    \repeat volta 2 {
+        | % 13
+        \stemUp g,2 \stemUp a2 | % 14
+        \stemUp b2 \stemUp c2 | % 15
+        \stemUp d2 \stemUp c2 | % 16
+        \stemUp b2 \stemUp a2 }
+    }
+
+
+% The score definition
+\score {
+  \new Staff
+    \context Staff <<
+      \mergeDifferentlyDottedOn
+      \mergeDifferentlyHeadedOn
+      \context Voice = "PartPOneVoiceOne" { \PartPOneVoiceOne }
+    >>
+
+  \layout {
+    \context {
+      \Score
+      \consists #(quebra-a-cada 4)
+      \override NonMusicalPaperColumn.line-break-permission = ##f
+    }
+  }
+  % To create MIDI output, uncomment the following lines:
+  % \midi { \tempo 4 = 100 }
 }
+
+
+
 
 % ================================================================
 %  PÁGINA 4  ->  COLE AQUI
