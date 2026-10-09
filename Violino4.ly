@@ -521,9 +521,9 @@ PartPOneVoiceOne =  \relative fis'' {
         \upbow -\markup{ \bold\teeny {0} } | % 2
         \stemDown d2 -\markup{ \bold\teeny {3} } \stemDown cis2 | % 3
         \stemDown b2 \stemUp a2 -\markup{ \bold\teeny {0} } | % 4
-        \stemDown b2 -\markup{ \bold\teeny {1} } \stemDown cis2 \breathe
-        -\markup{ \bold\teeny {2} } | % 5
-        \stemDown d2 -\markup{ \bold\teeny {3} } \stemDown cis2 \break | % 6
+        \stemDown b2 -\markup{ \bold\teeny {1} } \stemDown cis2
+        -\markup{ \bold\teeny {2} } \breathe | % 5
+        \break \stemDown d2 -\markup{ \bold\teeny {3} } \stemDown cis2 | % 6
         \stemDown b2 \stemUp a2 | % 7
         \stemUp g2 -\markup{ \bold\teeny {3} } \stemUp fis2 -\markup{
             \bold\teeny {2} } | % 8
@@ -532,20 +532,20 @@ PartPOneVoiceOne =  \relative fis'' {
     | % 9
     d1 -\markup{ \bold\teeny {0} } \bar "|."
     }
-
 PartPOneVoiceOneChords =  \chordmode {
     \repeat volta 2 {
         | % 1
-        d2:5 a2:5 | % 2
-        b2:m5 fis2:m5 | % 3
-        g2:5 d2:5 | % 4
-        g2:5 a2:5 | % 5
-        s2 s2 | % 6
-        s2 s2 | % 7
-        s2 s2 | % 8
-        s2 s2 }
+        d2 a2 | % 2
+        b2:m fis2:m | % 3
+        g2 d2 | % 4
+        g2 a2 | % 5
+             d2 a2 | % 2
+        b2:m fis2:m | % 3
+        g2 d2 | % 4
+        g2 a2 | % 5
+        }
     | % 9
-    s1 \bar "|."
+    d1 \bar "|."
     }
 
 
@@ -571,6 +571,53 @@ composer = "Johann Pachelbel" }
     % To create MIDI output, uncomment the following line:
     %  \midi {\tempo 4 = 100 }
     }
+
+
+% PARABÉNS PRA VOCÊ
+
+PartPOneVoiceOne =  \relative a' {
+    \clef "treble" \time 3/4 \key d \major \pageBreak s2 \stemUp a8
+    \downbow [ -\markup{ \bold\teeny {0} } \stemUp a8 ] -\markup{
+        \bold\teeny {1} } | % 2
+    \stemDown b4 -\markup{ \bold\teeny {1} } \stemUp a4 -\markup{
+        \bold\teeny {0} } \stemDown d4 -\markup{ \bold\teeny {3} } | % 3
+    \stemDown cis2 -\markup{ \bold\teeny {2} } \stemUp a8 \downbow [
+    -\markup{ \bold\teeny {0} } \stemUp a8 ] | % 4
+    \stemDown b4 -\markup{ \bold\teeny {1} } \stemUp a4 -\markup{
+        \bold\teeny {0} } \stemDown e'4 -\markup{ \bold\teeny {4} } | % 5
+    \stemDown d4 -\markup{ \bold\teeny {3} } \stemDown d4 \stemUp a8
+    \upbow [ -\markup{ \bold\teeny {0} } \stemUp a8 ] \break | % 6
+    \stemDown a'4 -\markup{ \bold\teeny {3} } \stemDown fis4 -\markup{
+        \bold\teeny {1} } \stemDown d4 -\markup{ \bold\teeny {3} } | % 7
+    \stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown b4 -\markup{
+        \bold\teeny {1} } \stemDown g'8 \downbow [ -\markup{ \bold\teeny
+        {2} } \stemDown g8 ] | % 8
+    \stemDown fis4 -\markup{ \bold\teeny {1} } \stemDown d4 -\markup{
+        \bold\teeny {3} } \stemDown e4 -\markup{ \bold\teeny {4} } | % 9
+    \stemDown d4 -\markup{ \bold\teeny {3} } \stemDown d2 \bar "|."
+    }
+
+
+% The score definition
+\score {
+    \header {
+        piece = "Parabéns pra Você"
+        composer = ""
+    }
+
+    <<
+        \new Staff
+            \context Staff <<
+                \mergeDifferentlyDottedOn
+                \mergeDifferentlyHeadedOn
+                \context Voice = "PartPOneVoiceOne" { \PartPOneVoiceOne }
+            >>
+    >>
+
+    \layout {}
+    % To create MIDI output, uncomment the following line:
+    %  \midi {\tempo 4 = 100 }
+}
 
 
 % ================================================================
