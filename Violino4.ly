@@ -681,8 +681,8 @@ composer = ""
 <<
 \new ChordNames {
 \chordmode {
-s2 | a2 | d2 | e2 | a2 |
-s2 | d1 e1 | a2 | e2 | a2 \bar "|."
+s2 | a2 | s2 | d2 | s2 | e2 | s2 | a2 |
+s2 | d1 e1 | a2 | e2 | a2
 }
 }
 
@@ -728,6 +728,12 @@ composer = ""
 
 
 <<
+\new ChordNames {
+\chordmode {
+a2 cis2:m | d2 a2 | d2 b2:m | e1 |
+a2 cis2:m | d2 a2 | d2 e2 | a1
+}
+}
 
 \new Staff
 <<
