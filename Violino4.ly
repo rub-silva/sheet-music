@@ -363,14 +363,14 @@ PartPOneVoiceOne =  \relative e'' {
     \repeat volta 2 {
         | % 5
         \stemUp a,2 \stemDown b2 | % 6
-        \stemDown c2 \stemDown d2 \break | % 7
+        \stemDown c2 \stemDown d2 | % 7
         \stemDown e2 \stemDown d2 | % 8
         \stemDown c2 \stemDown b2 }
     \repeat volta 2 {
         | % 9
         \stemUp d,2 \stemUp e2 | \barNumberCheck #10
         \stemUp f2 \stemUp g2 | % 11
-        \stemUp a2 \stemUp g2 \break | % 12
+        \stemUp a2 \stemUp g2 | % 12
         \stemUp f2 \stemUp e2 }
     \repeat volta 2 {
         | % 13
@@ -383,6 +383,12 @@ PartPOneVoiceOne =  \relative e'' {
 
 % The score definition
 \score {
+
+\header {
+piece = "Pentacordes"
+composer = "" }
+
+
   \new Staff
     \context Staff <<
       \mergeDifferentlyDottedOn
@@ -401,6 +407,41 @@ PartPOneVoiceOne =  \relative e'' {
   % \midi { \tempo 4 = 100 }
 }
 
+
+% SPICATO
+
+PartPOneVoiceOne =  \relative a' {
+    \clef "treble" \numericTimeSignature\time 4/4 \key a \major
+    \pageBreak | % 1
+    <a e'>1 :16 :16 \repeat volta 2 {
+        | % 2
+        \stemDown d2 \stemDown cis2 | % 3
+        \stemDown d2 \stemDown e2 }
+    }
+
+
+% The score definition
+
+
+\score {
+
+\header {
+piece = "Spicato"
+composer = "" }
+
+    <<
+        
+        \new Staff            
+            \context Staff << 
+                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+                \context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
+                >>
+        
+        >>
+    \layout {}
+    % To create MIDI output, uncomment the following line:
+    %  \midi {\tempo 4 = 100 }
+    }
 
 
 
