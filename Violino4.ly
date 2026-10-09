@@ -426,6 +426,10 @@ PartPOneVoiceOne =  \relative a' {
 \score {
 
 \header {
+piece = "Brilha Brilha Estrelinha"
+composer = "" }
+
+\header {
 piece = "Spicato"
 composer = "" }
 
@@ -444,13 +448,66 @@ composer = "" }
     }
 
 
-
 % ================================================================
 %  PÁGINA 4  ->  COLE AQUI
 %  (Brilha Brilha Estrelinha; Canon – J. Pachelbel;
 %   Parabéns pra Você; Alecrim Dourado)
 % ================================================================
 
+% BRILHA BRILHA ESTRELINHA
+\pageBreak
+
+PartPOneVoiceOne =  \relative a' {
+    \clef "treble" \numericTimeSignature\time 4/4 \key a \major
+    \pageBreak | % 1
+    \stemUp a4 \downbow -\markup{ \bold\teeny {0} } \stemUp a4 \stemDown
+    e'4 -\markup{ \bold\teeny {0} } \stemDown e4 | % 2
+    \stemDown fis4 -\markup{ \bold\teeny {1} } \stemDown fis4 \stemDown
+    e2 -\markup{ \bold\teeny {0} } | % 3
+    \stemDown d4 -\markup{ \bold\teeny {3} } \stemDown d4 \stemDown cis4
+    -\markup{ \bold\teeny {2} } \stemDown cis4 | % 4
+    \stemDown b4 -\markup{ \bold\teeny {1} } \stemDown b4 \stemUp a2
+    -\markup{ \bold\teeny {0} } -\markup{ \bold {Fine} } \bar "||"
+    \break | % 5
+    \stemDown e'4 -\markup{ \bold\teeny {4} } \stemDown e4 \stemDown d4
+    -\markup{ \bold\teeny {3} } \stemDown d4 | % 6
+    \stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown cis4 \stemDown
+    b2 -\markup{ \bold\teeny {1} } | % 7
+    \stemDown e4 -\markup{ \bold\teeny {4} } \stemDown e4 \stemDown d4
+    -\markup{ \bold\teeny {3} } \stemDown d4 | % 8
+    \stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown cis4 \stemDown
+    b2 -\markup{ \bold\teeny {1} } -\markup{ \bold {D.C. al Fine} } \bar
+    "||"
+    }
+
+PartPOneVoiceOneChords =  \chordmode {
+    | % 1
+    a4:5 s4 e4:5 s4 | % 2
+    d4:5 s4 a2:5 | % 3
+    d4:5 s4 a4:5 s4 | % 4
+    e4:5 s4 a2:5 \bar "||"
+    a4:5 s4 d4:5 s4 | % 6
+    a4:5 s4 e2:5 | % 7
+    a4:5 s4 d4:5 s4 | % 8
+    a4:5 s4 e2:5 \bar "||"
+    }
+
+
+% The score definition
+\score {
+    <<
+        
+        \context ChordNames = "PartPOneVoiceOneChords" { \PartPOneVoiceOneChords}
+        \new Staff
+            \context Staff << 
+                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+                \context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
+                >>
+            >>        
+    \layout {}
+    % To create MIDI output, uncomment the following line:
+    %  \midi {\tempo 4 = 100 }
+    }
 
 % ================================================================
 %  PÁGINA 5  ->  COLE AQUI
