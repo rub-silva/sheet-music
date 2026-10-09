@@ -798,7 +798,7 @@ composer = ""
 
 PartPOneVoiceOne =  \relative a' {
 \clef "treble" \time 2/2 \key a \major \pageBreak | % 1
-r2. \stemUp a8 \downbow [ -\markup{ \bold\teeny {0} } \stemUp b8 ]
+\partial 4 \stemUp a8 \downbow [ -\markup{ \bold\teeny {0} } \stemUp b8 ]
 -\markup{ \bold\teeny {1} } | % 2
 \stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown e4 -\markup{
 \bold\teeny {0} } \stemDown e4. \stemDown fis8 -\markup{
@@ -867,44 +867,41 @@ composer = ""
 % Mãezinha do Céu
 
 PartPOneVoiceOne =  \relative a' {
-\clef "treble" \time 2/2 \key a \major \pageBreak | % 1
-r2. \stemUp a8 \downbow [ -\markup{ \bold\teeny {0} } \stemUp b8 ]
--\markup{ \bold\teeny {1} } | % 2
-\stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown e4 -\markup{
-\bold\teeny {0} } \stemDown e4. \stemDown fis8 -\markup{
-\bold\teeny {1} } | % 3
-\stemDown e4 -\markup{ \bold\teeny {0} } \stemDown cis4 -\markup{
-\bold\teeny {2} } \stemUp a4. -\markup{ \bold\teeny {0} }
-\stemDown b8 -\markup{ \bold\teeny {1} } | % 4
-\stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown cis4 \stemDown
-b4 -\markup{ \bold\teeny {1} } \stemUp a4 -\markup{ \bold\teeny {0}
-} | % 5
-\stemDown b2. -\markup{ \bold\teeny {1} } \stemUp a8 \downbow [
-\stemUp b8 ] | % 6
-\stemDown cis4 \stemDown e4 \stemDown e4. \stemDown fis8 \break | % 7
-\stemDown e4 \stemDown cis4 \stemUp a4. \stemDown b8 | % 8
-\stemDown cis4 \stemDown cis4 \stemDown b4 -\markup{ \bold\teeny {1}
-} \stemDown b4 | % 9
-a1 -\markup{ \bold\teeny {0} } | \barNumberCheck #10
-\stemDown d2 \downbow -\markup{ \bold\teeny {3} } \stemDown d2 | % 11
-\stemDown fis4 -\markup{ \bold\teeny {1} } \stemDown fis2 \upbow
-\stemDown fis4 \upbow | % 12
-\stemDown e4 -\markup{ \bold\teeny {0} } \stemDown e4 \stemDown cis4
--\markup{ \bold\teeny {2} } \stemUp a4 -\markup{ \bold\teeny {0} }
-\break | % 13
-\stemDown b2. -\markup{ \bold\teeny {1} } \stemUp a8 \downbow [
--\markup{ \bold\teeny {0} } \stemUp b8 ] -\markup{ \bold\teeny {1} }
-| % 14
-\stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown e4 -\markup{
-\bold\teeny {0} } \stemDown e4. \stemDown fis8 -\markup{
-\bold\teeny {1} } | % 15
-\stemDown e4 -\markup{ \bold\teeny {0} } \stemDown cis4 -\markup{
-\bold\teeny {2} } \stemUp a4. -\markup{ \bold\teeny {0} }
-\stemDown b8 -\markup{ \bold\teeny {1} } | % 16
-\stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown cis4 \stemDown
-b4 -\markup{ \bold\teeny {1} } \stemDown b4 | % 17
-a1 -\markup{ \bold\teeny {0} } \bar "|."
-}
+    \clef "treble" \time 4/4 \key d \major \pageBreak \partial 4 \stemUp a4
+    \upbow | % 2
+    \stemDown d2 -\markup{ \bold\teeny {3} } \stemDown d4 \stemDown e4
+    -\markup{ \bold\teeny {0} } | % 3
+    fis1 | % 4
+    \stemDown g4 -\markup{ \bold\teeny {2} } \stemDown fis4 \stemDown e4
+    \stemDown d4 -\markup{ \bold\teeny {3} } | % 5
+    \stemDown e2. \breathe -\markup{ \bold\teeny {4} } \stemUp a,4
+    \upbow | % 6
+    \stemDown cis2 \stemDown cis4 \stemDown d4 | % 7
+    \stemDown e2. -\markup{ \bold\teeny {0} } \stemDown g4 \break | % 8
+    \stemDown fis4 \stemDown e4 \stemDown d4 \stemDown cis4 | % 9
+    \stemDown d2. \breathe \stemUp a4 \upbow | \barNumberCheck #10
+    \stemDown d2 \stemDown d4 \stemDown e4 -\markup{ \bold\teeny {0} } | % 11
+    \stemDown fis2 -\markup{ \bold\teeny {1} } \stemDown fis2 | % 12
+    \stemDown g4 -\markup{ \bold\teeny {2} } \stemDown fis4 \stemDown e4
+    -\markup{ \bold\teeny {0} } \stemDown d4 | % 13
+    \stemDown g2. \breathe -\markup{ \bold\teeny {2} } \stemDown g4
+    \upbow | % 14
+    \stemDown g2 \stemDown e4 -\markup{ \bold\teeny {0} } \stemDown g4
+    \break | % 15
+    \stemDown fis2 \stemDown d4 -\markup{ \bold\teeny {3} } \stemDown
+    fis4 -\markup{ \bold\teeny {1} } | % 16
+    \stemDown e2 -\markup{ \bold\teeny {0} } \stemDown cis4 -\markup{
+        \bold\teeny {2} } \stemDown e4 -\markup{ \bold\teeny {0} } | % 17
+    \stemDown fis2. \breathe -\markup{ \bold\teeny {1} } \stemDown g4
+    \upbow -\markup{ \bold\teeny {2} } | % 18
+    \stemDown g2 \stemDown e4 -\markup{ \bold\teeny {0} } \stemDown g4
+    -\markup{ \bold\teeny {2} } | % 19
+    \stemDown fis2 -\markup{ \bold\teeny {1} } \stemDown d4 \stemDown
+    fis4 | \barNumberCheck #20
+    \stemDown e2 -\markup{ \bold\teeny {0} } \stemDown cis4 -\markup{
+        \bold\teeny {2} } \stemDown e4 -\markup{ \bold\teeny {4} } | % 21
+    \partial 2. \stemDown d2. -\markup{ \bold\teeny {3} } \bar "|."
+    }
 
 
 % The score definition
@@ -914,23 +911,24 @@ a1 -\markup{ \bold\teeny {0} } \bar "|."
 piece = "Mãezinha do Céu"
 composer = ""
 }
-<<
 
-\new Staff
-<<
-\set Staff.instrumentName = ""
-
-\context Staff << 
-\mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-\context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
->>
->>
-
->>
-\layout {}
-% To create MIDI output, uncomment the following line:
-%  \midi {\tempo 4 = 100 }
-}
+    <<
+        
+        \new Staff
+        <<
+            \set Staff.instrumentName = ""
+            
+            \context Staff << 
+                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+                \context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
+                >>
+            >>
+        
+        >>
+    \layout {}
+    % To create MIDI output, uncomment the following line:
+    %  \midi {\tempo 4 = 100 }
+    }
 
 
 
