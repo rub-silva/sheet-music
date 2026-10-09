@@ -679,6 +679,13 @@ piece = "Alecrim Dourado"
 composer = ""
 }
 <<
+\new ChordNames {
+\chordmode {
+s2 | a2 | d2 | e2 | a2 |
+s2 | d1 e1 | a2 | e2 | a2 \bar "|."
+}
+}
+
 
 \new Staff
 
