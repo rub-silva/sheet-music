@@ -576,7 +576,7 @@ composer = "Johann Pachelbel" }
 % PARABÉNS PRA VOCÊ
 
 PartPOneVoiceOne =  \relative a' {
-    \clef "treble" \time 3/4 \key d \major \pageBreak s2 \stemUp a8
+    \clef "treble" \time 3/4 \key d \major \partial 4 \stemUp a8
     \downbow [ -\markup{ \bold\teeny {0} } \stemUp a8 ] -\markup{
         \bold\teeny {1} } | % 2
     \stemDown b4 -\markup{ \bold\teeny {1} } \stemUp a4 -\markup{
