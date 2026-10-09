@@ -803,8 +803,8 @@ composer = ""
 <<
 \new ChordNames {
 \chordmode {
-d1 | d1 | g1 | a1 |
-d1 | d1 | g1 | d1 | g1 | d1
+d1 | s1 | g1 | a1 |
+d1 | s1 | g1 | d1 | g1 | d1
 }
 }
 
