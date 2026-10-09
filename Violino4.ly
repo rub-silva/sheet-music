@@ -1,3 +1,4 @@
+
 \version "2.26.0"
 
 % ================================================================
@@ -213,7 +214,7 @@ f1:m | \partial 4 f4:maj9/g \bar "|."
 
 \repeat volta 2 {
 a4^\markup \small "Pizz."
- a' a,4 a' | a,4 a' a, a' \bar ":|."
+a' a,4 a' | a,4 a' a, a' \bar ":|."
 }
 \repeat volta 2 {
 a,4^\markup \small "Arco" a' a, a' | a,4 a' a, a' |
@@ -251,23 +252,23 @@ f,4
 % ---------- Laranjada Doce ----------
 
 #(define* (quebra-a-cada n #:optional (deslocamento 0))
-   (lambda (context)
-     (let ((ultimo -1))
-       (make-engraver
-        ((stop-translation-timestep engraver)
-         (let ((pos (ly:context-property context 'measurePosition))
-               (num (ly:context-property context 'currentBarNumber))
-               (col (ly:context-property context 'currentCommandColumn)))
-           (if (and (ly:moment? pos)
-                    (integer? num)
-                    (ly:grob? col)
-                    (zero? (ly:moment-main-numerator pos))
-                    (> num 1)
-                    (not (= num ultimo))
-                    (zero? (modulo (- num 1 deslocamento) n)))
-               (begin
-                 (set! ultimo num)
-                 (ly:grob-set-property! col 'line-break-permission 'force)))))))))
+(lambda (context)
+(let ((ultimo -1))
+(make-engraver
+((stop-translation-timestep engraver)
+(let ((pos (ly:context-property context 'measurePosition))
+(num (ly:context-property context 'currentBarNumber))
+(col (ly:context-property context 'currentCommandColumn)))
+(if (and (ly:moment? pos)
+(integer? num)
+(ly:grob? col)
+(zero? (ly:moment-main-numerator pos))
+(> num 1)
+(not (= num ultimo))
+(zero? (modulo (- num 1 deslocamento) n)))
+(begin
+(set! ultimo num)
+(ly:grob-set-property! col 'line-break-permission 'force)))))))))
 
 musica =  \relative e'' {
 \clef "treble" \numericTimeSignature\time 4/4 \key a \major
@@ -315,12 +316,12 @@ musica =  \relative e'' {
 piece = "Laranjada Doce"
 composer = "" }
 
- \new Staff \musica
-  \layout {
-    \context {
-      \Score
-      \consists #(quebra-a-cada 4)
-      \override NonMusicalPaperColumn.line-break-permission = ##f
+\new Staff \musica
+\layout {
+\context {
+\Score
+\consists #(quebra-a-cada 4)
+\override NonMusicalPaperColumn.line-break-permission = ##f
 }
 }
 }
@@ -333,52 +334,52 @@ composer = "" }
 % PENTACORDES
 
 #(define* (quebra-a-cada n #:optional (deslocamento 0))
-   (lambda (context)
-     (let ((ultimo -1))
-       (make-engraver
-        ((stop-translation-timestep engraver)
-         (let ((pos (ly:context-property context 'measurePosition))
-               (num (ly:context-property context 'currentBarNumber))
-               (col (ly:context-property context 'currentCommandColumn)))
-           (if (and (ly:moment? pos)
-                    (integer? num)
-                    (ly:grob? col)
-                    (zero? (ly:moment-main-numerator pos))
-                    (> num 1)
-                    (not (= num ultimo))
-                    (zero? (modulo (- num 1 deslocamento) n)))
-               (begin
-                 (set! ultimo num)
-                 (ly:grob-set-property! col 'line-break-permission 'force)))))))))
+(lambda (context)
+(let ((ultimo -1))
+(make-engraver
+((stop-translation-timestep engraver)
+(let ((pos (ly:context-property context 'measurePosition))
+(num (ly:context-property context 'currentBarNumber))
+(col (ly:context-property context 'currentCommandColumn)))
+(if (and (ly:moment? pos)
+(integer? num)
+(ly:grob? col)
+(zero? (ly:moment-main-numerator pos))
+(> num 1)
+(not (= num ultimo))
+(zero? (modulo (- num 1 deslocamento) n)))
+(begin
+(set! ultimo num)
+(ly:grob-set-property! col 'line-break-permission 'force)))))))))
 
 
 PartPOneVoiceOne =  \relative e'' {
-    \repeat volta 2 {
-        \clef "treble" \numericTimeSignature\time 4/4 \key c \major
-        \pageBreak | % 1
-        \stemDown e2 \stemDown f2 | % 2
-        \stemDown g2 \stemDown a2 | % 3
-        \stemDown b2 \stemDown a2 | % 4
-        \stemDown g2 \stemDown f2 }
-    \repeat volta 2 {
-        | % 5
-        \stemUp a,2 \stemDown b2 | % 6
-        \stemDown c2 \stemDown d2 | % 7
-        \stemDown e2 \stemDown d2 | % 8
-        \stemDown c2 \stemDown b2 }
-    \repeat volta 2 {
-        | % 9
-        \stemUp d,2 \stemUp e2 | \barNumberCheck #10
-        \stemUp f2 \stemUp g2 | % 11
-        \stemUp a2 \stemUp g2 | % 12
-        \stemUp f2 \stemUp e2 }
-    \repeat volta 2 {
-        | % 13
-        \stemUp g,2 \stemUp a2 | % 14
-        \stemUp b2 \stemUp c2 | % 15
-        \stemUp d2 \stemUp c2 | % 16
-        \stemUp b2 \stemUp a2 }
-    }
+\repeat volta 2 {
+\clef "treble" \numericTimeSignature\time 4/4 \key c \major
+\pageBreak | % 1
+\stemDown e2 \stemDown f2 | % 2
+\stemDown g2 \stemDown a2 | % 3
+\stemDown b2 \stemDown a2 | % 4
+\stemDown g2 \stemDown f2 }
+\repeat volta 2 {
+| % 5
+\stemUp a,2 \stemDown b2 | % 6
+\stemDown c2 \stemDown d2 | % 7
+\stemDown e2 \stemDown d2 | % 8
+\stemDown c2 \stemDown b2 }
+\repeat volta 2 {
+| % 9
+\stemUp d,2 \stemUp e2 | \barNumberCheck #10
+\stemUp f2 \stemUp g2 | % 11
+\stemUp a2 \stemUp g2 | % 12
+\stemUp f2 \stemUp e2 }
+\repeat volta 2 {
+| % 13
+\stemUp g,2 \stemUp a2 | % 14
+\stemUp b2 \stemUp c2 | % 15
+\stemUp d2 \stemUp c2 | % 16
+\stemUp b2 \stemUp a2 }
+}
 
 
 % The score definition
@@ -389,35 +390,35 @@ piece = "Pentacordes"
 composer = "" }
 
 
-  \new Staff
-    \context Staff <<
-      \mergeDifferentlyDottedOn
-      \mergeDifferentlyHeadedOn
-      \context Voice = "PartPOneVoiceOne" { \PartPOneVoiceOne }
-    >>
+\new Staff
+\context Staff <<
+\mergeDifferentlyDottedOn
+\mergeDifferentlyHeadedOn
+\context Voice = "PartPOneVoiceOne" { \PartPOneVoiceOne }
+>>
 
-  \layout {
-    \context {
-      \Score
-      \consists #(quebra-a-cada 4)
-      \override NonMusicalPaperColumn.line-break-permission = ##f
-    }
-  }
-  % To create MIDI output, uncomment the following lines:
-  % \midi { \tempo 4 = 100 }
+\layout {
+\context {
+\Score
+\consists #(quebra-a-cada 4)
+\override NonMusicalPaperColumn.line-break-permission = ##f
+}
+}
+% To create MIDI output, uncomment the following lines:
+% \midi { \tempo 4 = 100 }
 }
 
 
 % SPICATO
 
 PartPOneVoiceOne =  \relative a' {
-    \clef "treble" \numericTimeSignature\time 4/4 \key a \major
-    \pageBreak | % 1
-    <a e'>1 :16 :16 \repeat volta 2 {
-        | % 2
-        \stemDown d2 \stemDown cis2 | % 3
-        \stemDown d2 \stemDown e2 }
-    }
+\clef "treble" \numericTimeSignature\time 4/4 \key a \major
+\pageBreak | % 1
+<a e'>1 :16 :16 \repeat volta 2 {
+| % 2
+\stemDown d2 \stemDown cis2 | % 3
+\stemDown d2 \stemDown e2 }
+}
 
 
 % The score definition
@@ -429,19 +430,19 @@ PartPOneVoiceOne =  \relative a' {
 piece = "Spicato"
 composer = "" }
 
-    <<
-        
-        \new Staff            
-            \context Staff << 
-                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
-                >>
-        
-        >>
-    \layout {}
-    % To create MIDI output, uncomment the following line:
-    %  \midi {\tempo 4 = 100 }
-    }
+<<
+
+\new Staff            
+\context Staff << 
+\mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+\context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
+>>
+
+>>
+\layout {}
+% To create MIDI output, uncomment the following line:
+%  \midi {\tempo 4 = 100 }
+}
 
 
 % ================================================================
@@ -454,39 +455,39 @@ composer = "" }
 \pageBreak
 
 PartPOneVoiceOne =  \relative a' {
-    \clef "treble" \numericTimeSignature\time 4/4 \key a \major
-    \pageBreak | % 1
-    \stemUp a4 \downbow -\markup{ \bold\teeny {0} } \stemUp a4 \stemDown
-    e'4 -\markup{ \bold\teeny {0} } \stemDown e4 | % 2
-    \stemDown fis4 -\markup{ \bold\teeny {1} } \stemDown fis4 \stemDown
-    e2 -\markup{ \bold\teeny {0} } | \noBreak % 3
-    \stemDown d4 -\markup{ \bold\teeny {3} } \stemDown d4 \stemDown cis4
-    -\markup{ \bold\teeny {2} } \stemDown cis4 | % 4
-    \stemDown b4 -\markup{ \bold\teeny {1} } \stemDown b4 \stemUp a2
-    -\markup{ \bold\teeny {0} } -\markup{ \bold {Fine} } \bar "||"
-    \break | % 5
-    \stemDown e'4 -\markup{ \bold\teeny {4} } \stemDown e4 \stemDown d4
-    -\markup{ \bold\teeny {3} } \stemDown d4 | % 6
-    \stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown cis4 \stemDown
-    b2 -\markup{ \bold\teeny {1} } | \noBreak % 7
-    \stemDown e4 -\markup{ \bold\teeny {4} } \stemDown e4 \stemDown d4
-    -\markup{ \bold\teeny {3} } \stemDown d4 | % 8
-    \stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown cis4 \stemDown
-    b2 -\markup{ \bold\teeny {1} } -\markup{ \bold {D.C. al Fine} } \bar
-    "||"
-    }
+\clef "treble" \numericTimeSignature\time 4/4 \key a \major
+\pageBreak | % 1
+\stemUp a4 \downbow -\markup{ \bold\teeny {0} } \stemUp a4 \stemDown
+e'4 -\markup{ \bold\teeny {0} } \stemDown e4 | % 2
+\stemDown fis4 -\markup{ \bold\teeny {1} } \stemDown fis4 \stemDown
+e2 -\markup{ \bold\teeny {0} } | \noBreak % 3
+\stemDown d4 -\markup{ \bold\teeny {3} } \stemDown d4 \stemDown cis4
+-\markup{ \bold\teeny {2} } \stemDown cis4 | % 4
+\stemDown b4 -\markup{ \bold\teeny {1} } \stemDown b4 \stemUp a2
+-\markup{ \bold\teeny {0} } -\markup{ \bold {Fine} } \bar "||"
+\break | % 5
+\stemDown e'4 -\markup{ \bold\teeny {4} } \stemDown e4 \stemDown d4
+-\markup{ \bold\teeny {3} } \stemDown d4 | % 6
+\stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown cis4 \stemDown
+b2 -\markup{ \bold\teeny {1} } | \noBreak % 7
+\stemDown e4 -\markup{ \bold\teeny {4} } \stemDown e4 \stemDown d4
+-\markup{ \bold\teeny {3} } \stemDown d4 | % 8
+\stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown cis4 \stemDown
+b2 -\markup{ \bold\teeny {1} } -\markup{ \bold {D.C. al Fine} } \bar
+"||"
+}
 
 PartPOneVoiceOneChords =  \chordmode {
-    | % 1
-    a4 s4 e4 s4 | % 2
-    d4 s4 a2 | % 3
-    d4 s4 a4 s4 | % 4
-    e4 s4 a2 \bar "||"
-    a4 s4 d4 s4 | % 6
-    a4 s4 e2 | % 7
-    a4 s4 d4 s4 | % 8
-    a4 s4 e2 \bar "||"
-    }
+| % 1
+a4 s4 e4 s4 | % 2
+d4 s4 a2 | % 3
+d4 s4 a4 s4 | % 4
+e4 s4 a2 \bar "||"
+a4 s4 d4 s4 | % 6
+a4 s4 e2 | % 7
+a4 s4 d4 s4 | % 8
+a4 s4 e2 \bar "||"
+}
 
 
 % The score definition
@@ -497,56 +498,56 @@ PartPOneVoiceOneChords =  \chordmode {
 piece = "Brilha Brilha Estrelinha"
 composer = "" }
 
-    <<
-        
-        \context ChordNames = "PartPOneVoiceOneChords" { \PartPOneVoiceOneChords}
-        \new Staff
-            \context Staff << 
-                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
-                >>
-            >>        
-    \layout {}
-    % To create MIDI output, uncomment the following line:
-    %  \midi {\tempo 4 = 100 }
-    }
+<<
+
+\context ChordNames = "PartPOneVoiceOneChords" { \PartPOneVoiceOneChords}
+\new Staff
+\context Staff << 
+\mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+\context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
+>>
+>>        
+\layout {}
+% To create MIDI output, uncomment the following line:
+%  \midi {\tempo 4 = 100 }
+}
 
 % CANON
 
 PartPOneVoiceOne =  \relative fis'' {
-    \repeat volta 2 {
-        \clef "treble" \numericTimeSignature\time 4/4 \key d \major
-        \pageBreak | % 1
-        \stemDown fis2 \downbow -\markup{ \bold\teeny {1} } \stemDown e2
-        \upbow -\markup{ \bold\teeny {0} } | % 2
-        \stemDown d2 -\markup{ \bold\teeny {3} } \stemDown cis2 | % 3
-        \stemDown b2 \stemUp a2 -\markup{ \bold\teeny {0} } | % 4
-        \stemDown b2 -\markup{ \bold\teeny {1} } \stemDown cis2
-        -\markup{ \bold\teeny {2} } \breathe | % 5
-        \break \stemDown d2 -\markup{ \bold\teeny {3} } \stemDown cis2 | % 6
-        \stemDown b2 \stemUp a2 | % 7
-        \stemUp g2 -\markup{ \bold\teeny {3} } \stemUp fis2 -\markup{
-            \bold\teeny {2} } | % 8
-        \stemUp g2 -\markup{ \bold\teeny {3} } \stemUp e2 -\markup{
-            \bold\teeny {1} } }
-    | % 9
-    d1 -\markup{ \bold\teeny {0} } \bar "|."
-    }
+\repeat volta 2 {
+\clef "treble" \numericTimeSignature\time 4/4 \key d \major
+\pageBreak | % 1
+\stemDown fis2 \downbow -\markup{ \bold\teeny {1} } \stemDown e2
+\upbow -\markup{ \bold\teeny {0} } | % 2
+\stemDown d2 -\markup{ \bold\teeny {3} } \stemDown cis2 | % 3
+\stemDown b2 \stemUp a2 -\markup{ \bold\teeny {0} } | % 4
+\stemDown b2 -\markup{ \bold\teeny {1} } \stemDown cis2
+-\markup{ \bold\teeny {2} } \breathe | % 5
+\break \stemDown d2 -\markup{ \bold\teeny {3} } \stemDown cis2 | % 6
+\stemDown b2 \stemUp a2 | % 7
+\stemUp g2 -\markup{ \bold\teeny {3} } \stemUp fis2 -\markup{
+\bold\teeny {2} } | % 8
+\stemUp g2 -\markup{ \bold\teeny {3} } \stemUp e2 -\markup{
+\bold\teeny {1} } }
+| % 9
+d1 -\markup{ \bold\teeny {0} } \bar "|."
+}
 PartPOneVoiceOneChords =  \chordmode {
-    \repeat volta 2 {
-        | % 1
-        d2 a2 | % 2
-        b2:m fis2:m | % 3
-        g2 d2 | % 4
-        g2 a2 | % 5
-             d2 a2 | % 2
-        b2:m fis2:m | % 3
-        g2 d2 | % 4
-        g2 a2 | % 5
-        }
-    | % 9
-    d1 \bar "|."
-    }
+\repeat volta 2 {
+| % 1
+d2 a2 | % 2
+b2:m fis2:m | % 3
+g2 d2 | % 4
+g2 a2 | % 5
+d2 a2 | % 2
+b2:m fis2:m | % 3
+g2 d2 | % 4
+g2 a2 | % 5
+}
+| % 9
+d1 \bar "|."
+}
 
 
 % The score definition
@@ -556,67 +557,67 @@ PartPOneVoiceOneChords =  \chordmode {
 piece = "Canon in D"
 composer = "Johann Pachelbel" }
 
-    <<
-        
-        \context ChordNames = "PartPOneVoiceOneChords" { \PartPOneVoiceOneChords}
-        \new Staff
-    
-            \context Staff << 
-                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
-      >>
-        
-        >>
-    \layout {}
-    % To create MIDI output, uncomment the following line:
-    %  \midi {\tempo 4 = 100 }
-    }
+<<
+
+\context ChordNames = "PartPOneVoiceOneChords" { \PartPOneVoiceOneChords}
+\new Staff
+
+\context Staff << 
+\mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+\context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
+>>
+
+>>
+\layout {}
+% To create MIDI output, uncomment the following line:
+%  \midi {\tempo 4 = 100 }
+}
 
 
 % PARABÉNS PRA VOCÊ
 
 PartPOneVoiceOne =  \relative a' {
-    \clef "treble" \time 3/4 \key d \major \partial 4 \stemUp a8
-    \downbow [ -\markup{ \bold\teeny {0} } \stemUp a8 ] -\markup{
-        \bold\teeny {1} } | % 2
-    \stemDown b4 -\markup{ \bold\teeny {1} } \stemUp a4 -\markup{
-        \bold\teeny {0} } \stemDown d4 -\markup{ \bold\teeny {3} } | % 3
-    \stemDown cis2 -\markup{ \bold\teeny {2} } \stemUp a8 \downbow [
-    -\markup{ \bold\teeny {0} } \stemUp a8 ] | % 4
-    \stemDown b4 -\markup{ \bold\teeny {1} } \stemUp a4 -\markup{
-        \bold\teeny {0} } \stemDown e'4 -\markup{ \bold\teeny {4} } | % 5
-    \stemDown d4 -\markup{ \bold\teeny {3} } \stemDown d4 \stemUp a8
-    \upbow [ -\markup{ \bold\teeny {0} } \stemUp a8 ] \break | % 6
-    \stemDown a'4 -\markup{ \bold\teeny {3} } \stemDown fis4 -\markup{
-        \bold\teeny {1} } \stemDown d4 -\markup{ \bold\teeny {3} } | % 7
-    \stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown b4 -\markup{
-        \bold\teeny {1} } \stemDown g'8 \downbow [ -\markup{ \bold\teeny
-        {2} } \stemDown g8 ] | % 8
-    \stemDown fis4 -\markup{ \bold\teeny {1} } \stemDown d4 -\markup{
-        \bold\teeny {3} } \stemDown e4 -\markup{ \bold\teeny {4} } | % 9
-    \stemDown d4 -\markup{ \bold\teeny {3} } \stemDown d2 \bar "|."
-    }
+\clef "treble" \time 3/4 \key d \major \partial 4 \stemUp a8
+\downbow [ -\markup{ \bold\teeny {0} } \stemUp a8 ] -\markup{
+\bold\teeny {1} } | % 2
+\stemDown b4 -\markup{ \bold\teeny {1} } \stemUp a4 -\markup{
+\bold\teeny {0} } \stemDown d4 -\markup{ \bold\teeny {3} } | % 3
+\stemDown cis2 -\markup{ \bold\teeny {2} } \stemUp a8 \downbow [
+-\markup{ \bold\teeny {0} } \stemUp a8 ] | % 4
+\stemDown b4 -\markup{ \bold\teeny {1} } \stemUp a4 -\markup{
+\bold\teeny {0} } \stemDown e'4 -\markup{ \bold\teeny {4} } | % 5
+\stemDown d4 -\markup{ \bold\teeny {3} } \stemDown d4 \stemUp a8
+\upbow [ -\markup{ \bold\teeny {0} } \stemUp a8 ] \break | % 6
+\stemDown a'4 -\markup{ \bold\teeny {3} } \stemDown fis4 -\markup{
+\bold\teeny {1} } \stemDown d4 -\markup{ \bold\teeny {3} } | % 7
+\stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown b4 -\markup{
+\bold\teeny {1} } \stemDown g'8 \downbow [ -\markup{ \bold\teeny
+{2} } \stemDown g8 ] | % 8
+\stemDown fis4 -\markup{ \bold\teeny {1} } \stemDown d4 -\markup{
+\bold\teeny {3} } \stemDown e4 -\markup{ \bold\teeny {4} } | % 9
+\stemDown d4 -\markup{ \bold\teeny {3} } \stemDown d2 \bar "|."
+}
 
 
 % The score definition
 \score {
-    \header {
-        piece = "Parabéns pra Você"
-        composer = ""
-    }
+\header {
+piece = "Parabéns pra Você"
+composer = ""
+}
 
-    <<
-        \new Staff
-            \context Staff <<
-                \mergeDifferentlyDottedOn
-                \mergeDifferentlyHeadedOn
-                \context Voice = "PartPOneVoiceOne" { \PartPOneVoiceOne }
-            >>
-    >>
+<<
+\new Staff
+\context Staff <<
+\mergeDifferentlyDottedOn
+\mergeDifferentlyHeadedOn
+\context Voice = "PartPOneVoiceOne" { \PartPOneVoiceOne }
+>>
+>>
 
-    \layout {}
-    % To create MIDI output, uncomment the following line:
-    %  \midi {\tempo 4 = 100 }
+\layout {}
+% To create MIDI output, uncomment the following line:
+%  \midi {\tempo 4 = 100 }
 }
 
 
@@ -704,3 +705,4 @@ g'4 g' a' a' | b'2 r2 |
 %>>
 %================================================================
 %}
+
