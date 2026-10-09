@@ -687,6 +687,47 @@ composer = ""
 
 % MINHALMA
 
+PartPOneVoiceOne =  \relative a' {
+    \clef "treble" \time 4/4 \key a \major \pageBreak | % 1
+    \stemUp a4 \stemUp a4 \stemDown e'4 \stemDown e4 | % 2
+    \stemDown fis4 \stemDown e8 [ \stemDown d8 ] \stemDown e4 -\markup{
+        \bold\teeny {4} } \stemUp a,4 | % 3
+    \stemDown d4 \stemDown cis4 \stemDown b4 \stemUp a4 | % 4
+    \stemDown cis4. \stemDown b8 \stemDown b2 \break | % 5
+    \stemUp a4 \stemUp a4 \stemDown e'4 \stemDown e4 | % 6
+    \stemDown fis4 \stemDown e8 [ \stemDown d8 ] \stemDown e4 -\markup{
+        \bold\teeny {4} } \stemUp a,4 | % 7
+    \stemDown d4 \stemDown cis4 \stemDown b4. \stemUp a8 | % 8
+    a1 \bar "|."
+    }
+
+
+% The score definition
+\score {
+
+\header {
+piece = "Aleluia minh'alma abrirei"
+composer = ""
+}
+
+
+    <<
+        
+        \new Staff
+        <<
+            \set Staff.instrumentName = "P1"
+            
+            \context Staff << 
+                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+                \context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
+                >>
+            >>
+        
+        >>
+    \layout {}
+    % To create MIDI output, uncomment the following line:
+    %  \midi {\tempo 4 = 100 }
+    }
 
 
 
@@ -819,6 +860,76 @@ composer = ""
     % To create MIDI output, uncomment the following line:
     %  \midi {\tempo 4 = 100 }
     }
+
+
+% Mãezinha do Céu
+
+PartPOneVoiceOne =  \relative a' {
+    \clef "treble" \time 2/2 \key a \major \pageBreak | % 1
+    r2. \stemUp a8 \downbow [ -\markup{ \bold\teeny {0} } \stemUp b8 ]
+    -\markup{ \bold\teeny {1} } | % 2
+    \stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown e4 -\markup{
+        \bold\teeny {0} } \stemDown e4. \stemDown fis8 -\markup{
+        \bold\teeny {1} } | % 3
+    \stemDown e4 -\markup{ \bold\teeny {0} } \stemDown cis4 -\markup{
+        \bold\teeny {2} } \stemUp a4. -\markup{ \bold\teeny {0} }
+    \stemDown b8 -\markup{ \bold\teeny {1} } | % 4
+    \stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown cis4 \stemDown
+    b4 -\markup{ \bold\teeny {1} } \stemUp a4 -\markup{ \bold\teeny {0}
+        } | % 5
+    \stemDown b2. -\markup{ \bold\teeny {1} } \stemUp a8 \downbow [
+    \stemUp b8 ] | % 6
+    \stemDown cis4 \stemDown e4 \stemDown e4. \stemDown fis8 \break | % 7
+    \stemDown e4 \stemDown cis4 \stemUp a4. \stemDown b8 | % 8
+    \stemDown cis4 \stemDown cis4 \stemDown b4 -\markup{ \bold\teeny {1}
+        } \stemDown b4 | % 9
+    a1 -\markup{ \bold\teeny {0} } | \barNumberCheck #10
+    \stemDown d2 \downbow -\markup{ \bold\teeny {3} } \stemDown d2 | % 11
+    \stemDown fis4 -\markup{ \bold\teeny {1} } \stemDown fis2 \upbow
+    \stemDown fis4 \upbow | % 12
+    \stemDown e4 -\markup{ \bold\teeny {0} } \stemDown e4 \stemDown cis4
+    -\markup{ \bold\teeny {2} } \stemUp a4 -\markup{ \bold\teeny {0} }
+    \break | % 13
+    \stemDown b2. -\markup{ \bold\teeny {1} } \stemUp a8 \downbow [
+    -\markup{ \bold\teeny {0} } \stemUp b8 ] -\markup{ \bold\teeny {1} }
+    | % 14
+    \stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown e4 -\markup{
+        \bold\teeny {0} } \stemDown e4. \stemDown fis8 -\markup{
+        \bold\teeny {1} } | % 15
+    \stemDown e4 -\markup{ \bold\teeny {0} } \stemDown cis4 -\markup{
+        \bold\teeny {2} } \stemUp a4. -\markup{ \bold\teeny {0} }
+    \stemDown b8 -\markup{ \bold\teeny {1} } | % 16
+    \stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown cis4 \stemDown
+    b4 -\markup{ \bold\teeny {1} } \stemDown b4 | % 17
+    a1 -\markup{ \bold\teeny {0} } \bar "|."
+    }
+
+
+% The score definition
+\score {
+
+\header {
+piece = "Mãezinha do Céu"
+composer = ""
+}
+    <<
+        
+        \new Staff
+        <<
+            \set Staff.instrumentName = ""
+            
+            \context Staff << 
+                \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+                \context Voice = "PartPOneVoiceOne" {  \PartPOneVoiceOne }
+                >>
+            >>
+        
+        >>
+    \layout {}
+    % To create MIDI output, uncomment the following line:
+    %  \midi {\tempo 4 = 100 }
+    }
+
 
 
 % ================================================================
