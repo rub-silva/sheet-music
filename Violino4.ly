@@ -609,6 +609,13 @@ composer = ""
 }
 
 <<
+\new ChordNames {
+\chordmode {
+\partial 4 s4 | d2. | a2. | d2. |
+d2.:7 | g2. | d2 a4 | d2. \bar "|."
+}
+}
+
 \new Staff
 \context Staff <<
 \mergeDifferentlyDottedOn
