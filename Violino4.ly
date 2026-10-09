@@ -463,7 +463,7 @@ PartPOneVoiceOne =  \relative a' {
     \stemUp a4 \downbow -\markup{ \bold\teeny {0} } \stemUp a4 \stemDown
     e'4 -\markup{ \bold\teeny {0} } \stemDown e4 | % 2
     \stemDown fis4 -\markup{ \bold\teeny {1} } \stemDown fis4 \stemDown
-    e2 -\markup{ \bold\teeny {0} } | % 3
+    e2 -\markup{ \bold\teeny {0} } | \noBreak % 3
     \stemDown d4 -\markup{ \bold\teeny {3} } \stemDown d4 \stemDown cis4
     -\markup{ \bold\teeny {2} } \stemDown cis4 | % 4
     \stemDown b4 -\markup{ \bold\teeny {1} } \stemDown b4 \stemUp a2
@@ -472,7 +472,7 @@ PartPOneVoiceOne =  \relative a' {
     \stemDown e'4 -\markup{ \bold\teeny {4} } \stemDown e4 \stemDown d4
     -\markup{ \bold\teeny {3} } \stemDown d4 | % 6
     \stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown cis4 \stemDown
-    b2 -\markup{ \bold\teeny {1} } | % 7
+    b2 -\markup{ \bold\teeny {1} } | \noBreak % 7
     \stemDown e4 -\markup{ \bold\teeny {4} } \stemDown e4 \stemDown d4
     -\markup{ \bold\teeny {3} } \stemDown d4 | % 8
     \stemDown cis4 -\markup{ \bold\teeny {2} } \stemDown cis4 \stemDown
