@@ -584,7 +584,7 @@ PartPOneVoiceOne =  \relative a' {
 \bold\teeny {1} } | % 2
 \stemDown b4 -\markup{ \bold\teeny {1} } \stemUp a4 -\markup{
 \bold\teeny {0} } \stemDown d4 -\markup{ \bold\teeny {3} } | % 3
-\stemDown cis2 -\markup{ \bold\teeny {2} } \stemUp a8 \downbow [
+\stemDown cis2 -\markup{ \bold\teeny {2} } \breathe \stemUp a8 \downbow [
 -\markup{ \bold\teeny {0} } \stemUp a8 ] | % 4
 \stemDown b4 -\markup{ \bold\teeny {1} } \stemUp a4 -\markup{
 \bold\teeny {0} } \stemDown e'4 -\markup{ \bold\teeny {4} } | % 5
@@ -882,7 +882,7 @@ PartPOneVoiceOne =  \relative a' {
 fis1 | % 4
 \stemDown g4 -\markup{ \bold\teeny {2} } \stemDown fis4 \stemDown e4
 \stemDown d4 -\markup{ \bold\teeny {3} } | % 5
-\stemDown e2. \breathe -\markup{ \bold\teeny {4} } \stemUp a,4
+\stemDown e2. -\markup{ \bold\teeny {4} } \breathe \stemUp a,4
 \upbow | % 6
 \stemDown cis2 \stemDown cis4 \stemDown d4 | % 7
 \stemDown e2. -\markup{ \bold\teeny {0} } \stemDown g4 \break | % 8
