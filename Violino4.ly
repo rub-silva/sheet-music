@@ -357,7 +357,7 @@ composer = "" }
 
 PartPOneVoiceOne =  \relative e'' {
 \repeat volta 2 {
-\clef "treble" \numericTimeSignature\time 4/4 \key c \major
+\clef "treble" \numericTimeSignature\time 4/4 \key e \major
 \pageBreak | % 1
 \stemDown e2 \stemDown f2 | % 2
 \stemDown g2 \stemDown a2 | % 3
@@ -365,6 +365,7 @@ PartPOneVoiceOne =  \relative e'' {
 \stemDown g2 \stemDown f2 }
 \repeat volta 2 {
 | % 5
+\key a
 \stemUp a,2 \stemDown b2 | % 6
 \stemDown c2 \stemDown d2 | % 7
 \stemDown e2 \stemDown d2 | % 8
