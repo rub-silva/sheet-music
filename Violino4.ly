@@ -949,6 +949,12 @@ composer = ""
 }
 
 <<
+\new ChordNames {
+\chordmode {
+\partial 4 s4 |
+d1 | b1:m | e1:m 
+}
+}
 
 \new Staff
 <<
