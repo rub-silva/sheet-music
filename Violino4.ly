@@ -952,7 +952,11 @@ composer = ""
 \new ChordNames {
 \chordmode {
 \partial 4 s4 |
-d1 | b1:m | e1:m 
+d1*2 | b1:m | e1:m |
+a1 | a1*2:7 | d1*3 |
+d1:7 | g1 | g1:m | 
+d1 | a1 | d1:7 | 
+g1 | d1 | a1:7 | d
 }
 }
 
