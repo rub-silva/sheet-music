@@ -337,7 +337,7 @@ g1 | s2 d2 | s1 | s2 g2 |
 }
 
 % To create MIDI output, uncomment the following line:
-\midi {\tempo 4 = 100}
+%\midi {\tempo 4 = 100}
 }
 
 
@@ -421,6 +421,11 @@ piece = "Spicato"
 composer = "" }
 
 <<
+
+\new ChordNames {
+\chordmode { a1 }
+}
+
 
 \new Staff            
 \context Staff << 
