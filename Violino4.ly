@@ -318,7 +318,10 @@ composer = "" }
 <<
 \new ChordNames {
 \chordmode {
-a1 | e1*2 | s2 a2 |
+a1 | s2 e2 | s1 | s2 a2 |
+d1 | s2 a2 | s1 | s2 d2 |
+g1 | s2 d2 | s1 | s2 g2 |
+c1 | s2 g2 | s1 | s2 c2 |
 }
 }
 
@@ -332,11 +335,11 @@ a1 | e1*2 | s2 a2 |
 \override NonMusicalPaperColumn.line-break-permission = ##f
 }
 }
+
+% To create MIDI output, uncomment the following line:
+\midi {\tempo 4 = 100}
 }
 
-\layout {}
-% To create MIDI output, uncomment the following line:
-\midi {\tempo 4 = 100 }
 
 
 % PENTACORDES
