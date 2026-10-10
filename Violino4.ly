@@ -1,6 +1,3 @@
-
-
-
 \version "2.26.0"
 
 % ================================================================
@@ -335,80 +332,58 @@ composer = "" }
 
 % PENTACORDES
 
-#(define* (quebra-a-cada n #:optional (deslocamento 0))
-(lambda (context)
-(let ((ultimo -1))
-(make-engraver
-((stop-translation-timestep engraver)
-(let ((pos (ly:context-property context 'measurePosition))
-(num (ly:context-property context 'currentBarNumber))
-(col (ly:context-property context 'currentCommandColumn)))
-(if (and (ly:moment? pos)
-(integer? num)
-(ly:grob? col)
-(zero? (ly:moment-main-numerator pos))
-(> num 1)
-(not (= num ultimo))
-(zero? (modulo (- num 1 deslocamento) n)))
-(begin
-(set! ultimo num)
-(ly:grob-set-property! col 'line-break-permission 'force)))))))))
+frase = \relative c' { c2 d | e f | g f | e d }
+cifra = \chordmode { c1*2 | g1*2 }
 
-
-PartPOneVoiceOne =  \relative e'' {
-\repeat volta 2 {
-\clef "treble" \numericTimeSignature\time 4/4 \key e \major
-\pageBreak | % 1
-\stemDown e2 \stemDown f2 | % 2
-\stemDown g2 \stemDown a2 | % 3
-\stemDown b2 \stemDown a2 | % 4
-\stemDown g2 \stemDown f2 }
-\repeat volta 2 {
-| % 5
-\key a
-\stemUp a,2 \stemDown b2 | % 6
-\stemDown c2 \stemDown d2 | % 7
-\stemDown e2 \stemDown d2 | % 8
-\stemDown c2 \stemDown b2 }
-\repeat volta 2 {
-| % 9
-\stemUp d,2 \stemUp e2 | \barNumberCheck #10
-\stemUp f2 \stemUp g2 | % 11
-\stemUp a2 \stemUp g2 | % 12
-\stemUp f2 \stemUp e2 }
-\repeat volta 2 {
-| % 13
-\stemUp g,2 \stemUp a2 | % 14
-\stemUp b2 \stemUp c2 | % 15
-\stemUp d2 \stemUp c2 | % 16
-\stemUp b2 \stemUp a2 }
-}
-
-
-% The score definition
 \score {
+  \header {
+    piece = "Pentacordes"
+    composer = ""
+  }
 
-\header {
-piece = "Pentacordes"
-composer = "" }
+  <<
+    \new ChordNames {
+      \transpose c e'  { \cifra }
+      \transpose c a   { \cifra }
+      \transpose c d   { \cifra }
+      \transpose c g,  { \cifra }
+    }
 
+    \new Staff {
+      \time 4/4
 
-\new Staff
-\context Staff <<
-\mergeDifferentlyDottedOn
-\mergeDifferentlyHeadedOn
-\context Voice = "PartPOneVoiceOne" { \PartPOneVoiceOne }
->>
+      % Tom 1: Mi maior
+      \transpose c e' {
+        \key c \major
+        \frase
+        \bar ":|.|:" \break
+      }
 
-\layout {
-\context {
-\Score
-\consists #(quebra-a-cada 4)
-\override NonMusicalPaperColumn.line-break-permission = ##f
-}
-}
-% To create MIDI output, uncomment the following lines:
-% \midi { \tempo 4 = 100 }
+      % Tom 2: Lá maior
+      \transpose c a {
+        \key c \major
+        \frase
+        \bar ":|.|:" \break
+      }
+
+      % Tom 3: Ré maior
+      \transpose c d {
+        \key c \major
+        \frase
+        \bar ":|.|:" \break
+      }
+
+      % Tom 4: Sol maior
+      \transpose c g, {
+        \key c \major
+        \frase
+        \bar ":|."
+      }
+    }
+  >>
+
+  \layout { }
+  \midi { }
 }
 
 
