@@ -315,7 +315,16 @@ musica =  \relative e'' {
 piece = "Laranjada Doce"
 composer = "" }
 
+<<
+\new ChordNames {
+\chordmode {
+a1 | e1*2 | s2 a2 |
+}
+}
+
 \new Staff \musica
+>>
+
 \layout {
 \context {
 \Score
@@ -327,7 +336,7 @@ composer = "" }
 
 \layout {}
 % To create MIDI output, uncomment the following line:
-%  \midi {\tempo 4 = 100 }
+  \midi {\tempo 4 = 100 }
 
 
 % PENTACORDES
@@ -383,7 +392,7 @@ cifra = \chordmode { c1*2 | g1*2 }
   >>
 
   \layout { }
-  \midi { }
+  %\midi { }
 }
 
 
