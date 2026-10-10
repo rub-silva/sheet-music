@@ -873,6 +873,15 @@ composer = ""
 }
 
 <<
+\new ChordNames {
+\chordmode {
+\partial 4 s4 |
+a1*3 | e1 |
+a1*2 | a2 e2 | a1 |
+d1*2 | a1 | e1 |
+a1*2 | a2 e2 | a1 |
+}
+}
 
 \new Staff
 <<
