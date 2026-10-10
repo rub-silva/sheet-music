@@ -336,7 +336,7 @@ a1 | e1*2 | s2 a2 |
 
 \layout {}
 % To create MIDI output, uncomment the following line:
-  \midi {\tempo 4 = 100 }
+\midi {\tempo 4 = 100 }
 
 
 % PENTACORDES
