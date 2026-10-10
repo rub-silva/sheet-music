@@ -64,6 +64,13 @@ evenFooterMarkup = \markup {
 }
 }
 
+\layout {
+  \context {
+      \Voice
+          \override TextScript.direction = #UP
+            }
+            }
+
 % ================================================================
 %  PÁGINA 1  ->  Escalas e Arpejos – Lá   (Servos Cardoso)
 %  Armadura: Lá maior (3 sustenidos). Como a armadura já tem
